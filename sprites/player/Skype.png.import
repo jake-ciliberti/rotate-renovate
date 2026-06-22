@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://o5flcm2krpor"
-path="res://.godot/imported/big me.jpg-20b32aff8610126c22d14afbdff253f2.ctex"
+uid="uid://0ibelikdbyxk"
+path="res://.godot/imported/Skype.png-d3f099d860fb084da318ce53a69d854a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/player/big me.jpg"
-dest_files=["res://.godot/imported/big me.jpg-20b32aff8610126c22d14afbdff253f2.ctex"]
+source_file="res://sprites/player/Skype.png"
+dest_files=["res://.godot/imported/Skype.png-d3f099d860fb084da318ce53a69d854a.ctex"]
 
 [params]
 

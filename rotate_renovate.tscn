@@ -1,3 +1,8 @@
 [gd_scene format=3 uid="uid://caipjdql1bxng"]
 
+[ext_resource type="PackedScene" uid="uid://dp8fhyjgs5k2p" path="res://player.tscn" id="1_i3bn0"]
+
 [node name="Rotate-Renovate" type="Node2D" unique_id=1818220576]
+
+[node name="Player" parent="." unique_id=364368371 instance=ExtResource("1_i3bn0")]
+position = Vector2(580, 301)

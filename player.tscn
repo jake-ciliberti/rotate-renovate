@@ -1,5 +1,31 @@
 [gd_scene format=3 uid="uid://dp8fhyjgs5k2p"]
 
-[node name="Player" type="CharacterBody2D" unique_id=364368371]
+[ext_resource type="Script" uid="uid://bljot6vw47hx4" path="res://scripts/player.gd" id="1_onrkg"]
+[ext_resource type="Texture2D" uid="uid://0ibelikdbyxk" path="res://sprites/player/Skype.png" id="2_i3pqv"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=390120027]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xgtrc"]
+size = Vector2(278, 278)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hqtel"]
+atlas = ExtResource("2_i3pqv")
+region = Rect2(0, 0, 300, 300)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6w6ra"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hqtel")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Player" type="CharacterBody2D" unique_id=364368371]
+script = ExtResource("1_onrkg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1974059886]
+shape = SubResource("RectangleShape2D_xgtrc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1767716673]
+sprite_frames = SubResource("SpriteFrames_6w6ra")
