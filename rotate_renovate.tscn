@@ -3,13 +3,13 @@
 [ext_resource type="PackedScene" uid="uid://rpksdiijo6b7" path="res://background.tscn" id="1_gcghl"]
 [ext_resource type="PackedScene" uid="uid://dp8fhyjgs5k2p" path="res://player.tscn" id="1_i3bn0"]
 [ext_resource type="Texture2D" uid="uid://e3ogwgag5cwe" path="res://sprites/ratford/ratford.png" id="3_mv6us"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6w6ra"]
-size = Vector2(3072, 20)
+[ext_resource type="PackedScene" uid="uid://bge7knw2orlop" path="res://levels/level_template.tscn" id="4_mgkvk"]
 
 [node name="Rotate-Renovate" type="Node2D" unique_id=1818220576]
 
 [node name="background" parent="." unique_id=534743633 instance=ExtResource("1_gcghl")]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=2037554592]
 
 [node name="Player" parent="." unique_id=364368371 instance=ExtResource("1_i3bn0")]
 position = Vector2(512, 405)
@@ -23,13 +23,9 @@ limit_bottom = 0
 position_smoothing_enabled = true
 editor_draw_limits = true
 
+[node name="level_template" parent="." unique_id=1509638767 instance=ExtResource("4_mgkvk")]
+
 [node name="Ratford" type="Sprite2D" parent="." unique_id=1866111767]
-position = Vector2(280, 488)
+position = Vector2(-319.9999, 487.99997)
 scale = Vector2(5, 5)
 texture = ExtResource("3_mv6us")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=807190810]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1796841978]
-position = Vector2(512, 820)
-shape = SubResource("RectangleShape2D_6w6ra")
