@@ -19,19 +19,24 @@ func rotate_panels(delta: float) -> void:
 		i.rotation += rotation_direction * Globals.ROTATION_SPEED * delta
 
 func change_selection():
-	selected_rotation_group = Input.get_axis("select_prev", "select_next")
+	var direction = Input.get_axis("select_prev", "select_next")
 	
-	# TODO: get rid of conditionals maybe?
-	if selected_rotation_group < 0:
-		selected_rotation_group = rotation_groups.size() -1
-	elif selected_rotation_group >= rotation_groups.size():
-		selected_rotation_group = 0
+	if direction > 1:
+		selected_rotation_group += 1
+		if selected_rotation_group >= rotation_groups.size():
+			selected_rotation_group = 0
+	elif direction < 1:
+		selected_rotation_group -= 1
+		if selected_rotation_group < 0:
+			selected_rotation_group = rotation_groups.size() -1
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	# There has to be a better way to do this. idk what it is yet. oops.
 	if Input.is_action_pressed("rotate_counterclockwise") or Input.is_action_pressed("rotate_clockwise"):
 		rotate_panels(delta);
-		
-	change_selection()
+	
+	if Input.is_action_pressed("select_prev") or Input.is_action_pressed("select_next"):	
+		change_selection()
 		
 	pass
