@@ -3,19 +3,29 @@
 [ext_resource type="Script" uid="uid://cex0107qyysnv" path="res://scripts/level_template.gd" id="1_skox6"]
 [ext_resource type="Script" uid="uid://77eofacptory" path="res://scripts/test_rotatable_object.gd" id="2_13k7l"]
 [ext_resource type="Texture2D" uid="uid://o5flcm2krpor" path="res://sprites/big me.jpg" id="2_skox6"]
+[ext_resource type="Texture2D" uid="uid://b4depwsmkctlp" path="res://sprites/northernlion.png" id="4_13k7l"]
+[ext_resource type="Texture2D" uid="uid://cyptmo3u5qsd" path="res://sprites/mediumguy.png" id="5_8xmsw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_13k7l"]
 size = Vector2(200, 149)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6w6ra"]
+size = Vector2(98, 120)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4v1xc"]
+size = Vector2(120, 134)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8xmsw"]
 size = Vector2(3072, 20)
 
-[node name="level_template" type="Node2D" unique_id=1509638767 node_paths=PackedStringArray("testPanel")]
+[node name="level_template" type="Node2D" unique_id=1509638767 node_paths=PackedStringArray("testPanel", "testPanel2", "testPanel3")]
 script = ExtResource("1_skox6")
 testPanel = NodePath("TestRotatableObject")
+testPanel2 = NodePath("TestRotatableObject2")
+testPanel3 = NodePath("TestRotatableObject3")
 
 [node name="TestRotatableObject" type="AnimatableBody2D" parent="." unique_id=427894072]
-position = Vector2(915, 717)
+position = Vector2(1065, 710)
 script = ExtResource("2_13k7l")
 
 [node name="Sprite2D" type="Sprite2D" parent="TestRotatableObject" unique_id=414044641]
@@ -25,6 +35,28 @@ texture = ExtResource("2_skox6")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TestRotatableObject" unique_id=1366712396]
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_13k7l")
+
+[node name="TestRotatableObject2" type="AnimatableBody2D" parent="." unique_id=1882469813]
+position = Vector2(803, 729)
+script = ExtResource("2_13k7l")
+
+[node name="Sprite2D" type="Sprite2D" parent="TestRotatableObject2" unique_id=1558746552]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("4_13k7l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TestRotatableObject2" unique_id=1648902898]
+shape = SubResource("RectangleShape2D_6w6ra")
+
+[node name="TestRotatableObject3" type="AnimatableBody2D" parent="." unique_id=429976072]
+position = Vector2(1342, 577)
+script = ExtResource("2_13k7l")
+
+[node name="Sprite2D" type="Sprite2D" parent="TestRotatableObject3" unique_id=1642691465]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_8xmsw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TestRotatableObject3" unique_id=2064950398]
+shape = SubResource("RectangleShape2D_4v1xc")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=986122694]
 

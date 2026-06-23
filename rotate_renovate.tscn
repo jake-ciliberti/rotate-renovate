@@ -26,6 +26,6 @@ position_smoothing_enabled = true
 editor_draw_limits = true
 
 [node name="Ratford" type="Sprite2D" parent="." unique_id=1866111767]
-position = Vector2(-319.9999, 487.99997)
+position = Vector2(-319.99988, 488.99994)
 scale = Vector2(5, 5)
 texture = ExtResource("3_mv6us")
