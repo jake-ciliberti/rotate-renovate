@@ -36,7 +36,8 @@ func _process(delta: float) -> void:
 	if Input.is_action_pressed("rotate_counterclockwise") or Input.is_action_pressed("rotate_clockwise"):
 		rotate_panels(delta);
 	
-	if Input.is_action_pressed("select_prev") or Input.is_action_pressed("select_next"):	
+	if Input.is_action_just_pressed("select_prev") or Input.is_action_just_pressed("select_next"):
+		print("switch detected!")
 		change_selection()
 		
 	pass
