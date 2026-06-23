@@ -1,8 +1,23 @@
 [gd_scene format=3 uid="uid://caipjdql1bxng"]
 
+[ext_resource type="PackedScene" uid="uid://rpksdiijo6b7" path="res://background.tscn" id="1_gcghl"]
 [ext_resource type="PackedScene" uid="uid://dp8fhyjgs5k2p" path="res://player.tscn" id="1_i3bn0"]
+[ext_resource type="Texture2D" uid="uid://e3ogwgag5cwe" path="res://sprites/ratford/ratford.png" id="3_mv6us"]
 
 [node name="Rotate-Renovate" type="Node2D" unique_id=1818220576]
 
+[node name="background" parent="." unique_id=534743633 instance=ExtResource("1_gcghl")]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=906550416]
+visible = false
+
 [node name="Player" parent="." unique_id=364368371 instance=ExtResource("1_i3bn0")]
-position = Vector2(580, 301)
+position = Vector2(778, 418)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=769330519]
+anchor_mode = 0
+
+[node name="Ratford" type="Sprite2D" parent="." unique_id=1866111767]
+position = Vector2(280, 488)
+scale = Vector2(5, 5)
+texture = ExtResource("3_mv6us")
