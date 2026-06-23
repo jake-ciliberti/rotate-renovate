@@ -10,10 +10,9 @@ size = Vector2(200, 149)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8xmsw"]
 size = Vector2(3072, 20)
 
-[node name="level_template" type="Node2D" unique_id=1509638767]
+[node name="level_template" type="Node2D" unique_id=1509638767 node_paths=PackedStringArray("testPanel")]
 script = ExtResource("1_skox6")
 testPanel = NodePath("TestRotatableObject")
-rotation_groups = null
 
 [node name="TestRotatableObject" type="AnimatableBody2D" parent="." unique_id=427894072]
 position = Vector2(915, 717)

@@ -11,6 +11,8 @@
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=2037554592]
 
+[node name="level_template" parent="." unique_id=1509638767 instance=ExtResource("4_mgkvk")]
+
 [node name="Player" parent="." unique_id=364368371 instance=ExtResource("1_i3bn0")]
 position = Vector2(512, 405)
 
@@ -22,8 +24,6 @@ limit_top = 0
 limit_bottom = 0
 position_smoothing_enabled = true
 editor_draw_limits = true
-
-[node name="level_template" parent="." unique_id=1509638767 instance=ExtResource("4_mgkvk")]
 
 [node name="Ratford" type="Sprite2D" parent="." unique_id=1866111767]
 position = Vector2(-319.9999, 487.99997)
