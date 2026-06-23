@@ -29,8 +29,8 @@ func change_selection():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	# TODO: make both of these conditional for performance and to avoid jittering
-	rotate_panels(delta);
+	if Input.is_action_pressed("rotate_counterclockwise") or Input.is_action_pressed("rotate_clockwise"):
+		rotate_panels(delta);
 		
 	change_selection()
 		
