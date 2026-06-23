@@ -13,13 +13,19 @@
 [node name="background" type="Node2D" unique_id=534743633]
 scale = Vector2(2, 2)
 
-[node name="Sky" type="Parallax2D" parent="." unique_id=1853184903]
+[node name="Sky" type="Parallax2D" parent="." unique_id=1220534522]
+scroll_scale = Vector2(0.05, 1)
+repeat_size = Vector2(512, 0)
+repeat_times = 2
 
-[node name="Sky" type="Sprite2D" parent="Sky" unique_id=1754224902]
+[node name="Sky" type="Sprite2D" parent="Sky" unique_id=1202777907]
 texture = ExtResource("1_oabld")
 centered = false
 
 [node name="Buildings4" type="Parallax2D" parent="." unique_id=1179799549]
+scroll_scale = Vector2(0.1, 1)
+repeat_size = Vector2(512, 0)
+repeat_times = 2
 
 [node name="Buildings4" type="Sprite2D" parent="Buildings4" unique_id=157665782]
 texture = ExtResource("2_eq6nc")
@@ -27,6 +33,9 @@ centered = false
 offset = Vector2(0, 218)
 
 [node name="TinyCloud2" type="Parallax2D" parent="." unique_id=1011305073]
+scroll_scale = Vector2(0.15, 1)
+repeat_size = Vector2(512, 0)
+repeat_times = 2
 
 [node name="TinyCloud2" type="Sprite2D" parent="TinyCloud2" unique_id=252778205]
 texture = ExtResource("3_cdpnt")
@@ -34,6 +43,9 @@ centered = false
 offset = Vector2(205, 219)
 
 [node name="Buildings3" type="Parallax2D" parent="." unique_id=1284167343]
+scroll_scale = Vector2(0.2, 1)
+repeat_size = Vector2(512, 0)
+repeat_times = 2
 
 [node name="Buildings3" type="Sprite2D" parent="Buildings3" unique_id=313487117]
 texture = ExtResource("3_bpugw")
@@ -41,6 +53,9 @@ centered = false
 offset = Vector2(0, 174)
 
 [node name="TinyCloud" type="Parallax2D" parent="." unique_id=985628629]
+scroll_scale = Vector2(0.25, 1)
+repeat_size = Vector2(512, 0)
+repeat_times = 2
 
 [node name="TinyCloud" type="Sprite2D" parent="TinyCloud" unique_id=427552576]
 texture = ExtResource("5_8u6ia")
@@ -48,6 +63,8 @@ centered = false
 offset = Vector2(179, 208)
 
 [node name="Shade3" type="Parallax2D" parent="." unique_id=496322368]
+repeat_size = Vector2(512, 0)
+repeat_times = 2
 
 [node name="Shade3" type="Sprite2D" parent="Shade3" unique_id=347240149]
 texture = ExtResource("4_vvxqx")
@@ -55,6 +72,9 @@ centered = false
 offset = Vector2(0, 250)
 
 [node name="Buildings2" type="Parallax2D" parent="." unique_id=74179509]
+scroll_scale = Vector2(0.3, 1)
+repeat_size = Vector2(512, 0)
+repeat_times = 2
 
 [node name="Buildings2" type="Sprite2D" parent="Buildings2" unique_id=586720462]
 texture = ExtResource("4_gjjrj")
@@ -62,6 +82,8 @@ centered = false
 offset = Vector2(0, 202)
 
 [node name="Shade2" type="Parallax2D" parent="." unique_id=1411299677]
+repeat_size = Vector2(512, 0)
+repeat_times = 2
 
 [node name="Shade2" type="Sprite2D" parent="Shade2" unique_id=937796641]
 texture = ExtResource("6_cdpnt")
@@ -69,6 +91,9 @@ centered = false
 offset = Vector2(0, 290)
 
 [node name="Buildings1" type="Parallax2D" parent="." unique_id=1762764322]
+scroll_scale = Vector2(0.4, 1)
+repeat_size = Vector2(512, 0)
+repeat_times = 2
 
 [node name="Buildings1" type="Sprite2D" parent="Buildings1" unique_id=1124300031]
 texture = ExtResource("5_vvxqx")
