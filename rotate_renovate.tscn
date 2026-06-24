@@ -18,7 +18,7 @@ level = NodePath("level_template")
 [node name="level_template" parent="." unique_id=1509638767 instance=ExtResource("4_mgkvk")]
 
 [node name="Ratford" type="Sprite2D" parent="." unique_id=1866111767]
-position = Vector2(-319.99988, 488.99994)
+position = Vector2(-319.99988, 489.99997)
 scale = Vector2(5, 5)
 texture = ExtResource("3_mv6us")
 
