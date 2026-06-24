@@ -23,6 +23,7 @@ script = ExtResource("1_skox6")
 testPanel = NodePath("TestRotatableObject")
 testPanel2 = NodePath("TestRotatableObject2")
 testPanel3 = NodePath("TestRotatableObject3")
+spawnpoint = Vector2(512, 408)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1925201902]
 

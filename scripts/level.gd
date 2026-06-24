@@ -1,16 +1,24 @@
 @abstract
 class_name Level extends Node2D
 
-# @export var player: NodePath
+# level setup
+@export var spawnpoint: Vector2
 
+# runtime variables
 var selected_rotation_group = 0 # TODO: figure out how to move this to player
 var rotation_groups: Array[Array]
 
 var rotation_direction = 0
 
+signal teleport
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	teleport.emit(spawnpoint)
+	make_groups()
+
+@abstract
+func make_groups() -> void
 
 func rotate_panels(delta: float) -> void:
 	rotation_direction = Input.get_axis("rotate_counterclockwise", "rotate_clockwise")
@@ -37,3 +45,10 @@ func _process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("select_prev") or Input.is_action_just_pressed("select_next"):
 		change_selection()
+	
+	if Input.is_action_just_pressed("reset"):
+		_ready()
+		
+		for i in rotation_groups:
+			for j in i:
+				j.reset() 
