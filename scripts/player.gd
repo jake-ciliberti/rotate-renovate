@@ -42,5 +42,5 @@ func _physics_process(delta: float) -> void:
 		velocity += 2 * get_gravity() * delta
 		
 		sprite.flip_v = true
-
+	
 	move_and_slide()

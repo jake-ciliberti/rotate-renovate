@@ -22,9 +22,8 @@ size = Vector2(98, 120)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4v1xc"]
 size = Vector2(120, 134)
 
-[node name="level_template" type="Node2D" unique_id=347755843 node_paths=PackedStringArray("panel_controller")]
+[node name="level_template" type="Node2D" unique_id=347755843]
 script = ExtResource("1_yglgk")
-panel_controller = NodePath("")
 metadata/_custom_type_script = "uid://1hljlhp5cw2n"
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1925201902]
