@@ -9,6 +9,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8xmsw"]
 size = Vector2(3072, 20)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y4kfo"]
+size = Vector2(126.44338, 3.7348008)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_13k7l"]
 size = Vector2(200, 149)
 
@@ -23,7 +26,6 @@ script = ExtResource("1_skox6")
 testPanel = NodePath("TestRotatableObject")
 testPanel2 = NodePath("TestRotatableObject2")
 testPanel3 = NodePath("TestRotatableObject3")
-spawnpoint = Vector2(512, 408)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1925201902]
 
@@ -32,6 +34,12 @@ spawnpoint = Vector2(512, 408)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=576598043]
 position = Vector2(512, 820)
 shape = SubResource("RectangleShape2D_8xmsw")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=93215976]
+position = Vector2(3235.3716, 192.85745)
+rotation = -0.49306813
+scale = Vector2(22.23999, 9.96)
+shape = SubResource("RectangleShape2D_y4kfo")
 
 [node name="TestRotatableObject" type="AnimatableBody2D" parent="." unique_id=427894072]
 position = Vector2(1065, 710)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0ibelikdbyxk"
-path="res://.godot/imported/Skype.png-d3f099d860fb084da318ce53a69d854a.ctex"
+uid="uid://35s2r4y2dqqi"
+path="res://.godot/imported/monkey_mechanic.png-a5b8b4106d10e5f054d0b1f537372b69.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/player/Skype.png"
-dest_files=["res://.godot/imported/Skype.png-d3f099d860fb084da318ce53a69d854a.ctex"]
+source_file="res://sprites/player/monkey_mechanic.png"
+dest_files=["res://.godot/imported/monkey_mechanic.png-a5b8b4106d10e5f054d0b1f537372b69.ctex"]
 
 [params]
 

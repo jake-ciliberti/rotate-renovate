@@ -2,7 +2,7 @@
 class_name Level extends Node2D
 
 # level setup
-@export var spawnpoint: Vector2
+@export var spawnpoint: Vector2 = Vector2(512, 408)
 
 # runtime variables
 var selected_rotation_group = 0 # TODO: figure out how to move this to player
@@ -17,8 +17,8 @@ func _ready() -> void:
 	teleport.emit(spawnpoint)
 	make_groups()
 
-@abstract
-func make_groups() -> void
+func make_groups() -> void:
+	pass
 
 func rotate_panels(delta: float) -> void:
 	rotation_direction = Input.get_axis("rotate_counterclockwise", "rotate_clockwise")

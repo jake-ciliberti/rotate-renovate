@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://35s2r4y2dqqi"
-path="res://.godot/imported/monkey_mechanic.png-807f0b0f4659a8a50a82b17602ddd8f9.ctex"
+uid="uid://bnx6vl6r4maca"
+path="res://.godot/imported/Trees.png-cb292b14a30a4ca8de720669b0452475.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/monkey_mechanic.png"
-dest_files=["res://.godot/imported/monkey_mechanic.png-807f0b0f4659a8a50a82b17602ddd8f9.ctex"]
+source_file="res://sprites/tiles/Trees.png"
+dest_files=["res://.godot/imported/Trees.png-cb292b14a30a4ca8de720669b0452475.ctex"]
 
 [params]
 
