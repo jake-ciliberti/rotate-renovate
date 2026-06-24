@@ -6,6 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://b4depwsmkctlp" path="res://sprites/northernlion.png" id="4_13k7l"]
 [ext_resource type="Texture2D" uid="uid://cyptmo3u5qsd" path="res://sprites/mediumguy.png" id="5_8xmsw"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8xmsw"]
+size = Vector2(3072, 20)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_13k7l"]
 size = Vector2(200, 149)
 
@@ -15,14 +18,19 @@ size = Vector2(98, 120)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4v1xc"]
 size = Vector2(120, 134)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8xmsw"]
-size = Vector2(3072, 20)
-
 [node name="level_template" type="Node2D" unique_id=1509638767 node_paths=PackedStringArray("testPanel", "testPanel2", "testPanel3")]
 script = ExtResource("1_skox6")
 testPanel = NodePath("TestRotatableObject")
 testPanel2 = NodePath("TestRotatableObject2")
 testPanel3 = NodePath("TestRotatableObject3")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1925201902]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=986122694]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=576598043]
+position = Vector2(512, 820)
+shape = SubResource("RectangleShape2D_8xmsw")
 
 [node name="TestRotatableObject" type="AnimatableBody2D" parent="." unique_id=427894072]
 position = Vector2(1065, 710)
@@ -57,9 +65,3 @@ texture = ExtResource("5_8xmsw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TestRotatableObject3" unique_id=2064950398]
 shape = SubResource("RectangleShape2D_4v1xc")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=986122694]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=576598043]
-position = Vector2(512, 820)
-shape = SubResource("RectangleShape2D_8xmsw")
