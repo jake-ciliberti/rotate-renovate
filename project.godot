@@ -25,6 +25,10 @@ window/size/viewport_width=1024
 window/size/viewport_height=810
 window/size/resizable=false
 
+[global_group]
+
+panels=""
+
 [input]
 
 move_left={

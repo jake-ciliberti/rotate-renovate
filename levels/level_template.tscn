@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://bge7knw2orlop"]
 
-[ext_resource type="Script" uid="uid://cex0107qyysnv" path="res://scripts/level_template.gd" id="1_skox6"]
-[ext_resource type="Script" uid="uid://77eofacptory" path="res://scripts/test_rotatable_object.gd" id="2_13k7l"]
+[ext_resource type="Script" uid="uid://1hljlhp5cw2n" path="res://scripts/level.gd" id="1_yglgk"]
 [ext_resource type="Texture2D" uid="uid://o5flcm2krpor" path="res://sprites/big me.jpg" id="2_skox6"]
+[ext_resource type="Script" uid="uid://74gqrjs1tww4" path="res://scripts/panel.gd" id="3_yglgk"]
 [ext_resource type="Texture2D" uid="uid://b4depwsmkctlp" path="res://sprites/northernlion.png" id="4_13k7l"]
 [ext_resource type="Texture2D" uid="uid://cyptmo3u5qsd" path="res://sprites/mediumguy.png" id="5_8xmsw"]
+[ext_resource type="Script" uid="uid://ccmj71uqtvvjl" path="res://scripts/panel_controller.gd" id="6_yglgk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8xmsw"]
 size = Vector2(3072, 20)
@@ -21,11 +22,10 @@ size = Vector2(98, 120)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4v1xc"]
 size = Vector2(120, 134)
 
-[node name="level_template" type="Node2D" unique_id=1509638767 node_paths=PackedStringArray("testPanel", "testPanel2", "testPanel3")]
-script = ExtResource("1_skox6")
-testPanel = NodePath("TestRotatableObject")
-testPanel2 = NodePath("TestRotatableObject2")
-testPanel3 = NodePath("TestRotatableObject3")
+[node name="level_template" type="Node2D" unique_id=347755843 node_paths=PackedStringArray("panel_controller")]
+script = ExtResource("1_yglgk")
+panel_controller = NodePath("")
+metadata/_custom_type_script = "uid://1hljlhp5cw2n"
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1925201902]
 
@@ -41,36 +41,46 @@ rotation = -0.49306813
 scale = Vector2(22.23999, 9.96)
 shape = SubResource("RectangleShape2D_y4kfo")
 
-[node name="TestRotatableObject" type="AnimatableBody2D" parent="." unique_id=427894072]
-position = Vector2(1065, 710)
-script = ExtResource("2_13k7l")
+[node name="PanelController" type="Node2D" parent="." unique_id=1108507675]
+script = ExtResource("6_yglgk")
+number_of_groups = 2
+metadata/_custom_type_script = "uid://ccmj71uqtvvjl"
 
-[node name="Sprite2D" type="Sprite2D" parent="TestRotatableObject" unique_id=414044641]
+[node name="GamePanel" type="AnimatableBody2D" parent="PanelController" unique_id=2005313600]
+position = Vector2(511, 710)
+script = ExtResource("3_yglgk")
+metadata/_custom_type_script = "uid://74gqrjs1tww4"
+
+[node name="Sprite2D" type="Sprite2D" parent="PanelController/GamePanel" unique_id=414044641]
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("2_skox6")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TestRotatableObject" unique_id=1366712396]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PanelController/GamePanel" unique_id=1366712396]
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_13k7l")
 
-[node name="TestRotatableObject2" type="AnimatableBody2D" parent="." unique_id=1882469813]
-position = Vector2(803, 729)
-script = ExtResource("2_13k7l")
+[node name="GamePanel2" type="AnimatableBody2D" parent="PanelController" unique_id=1053283789]
+position = Vector2(249, 729)
+script = ExtResource("3_yglgk")
+group = 1
+metadata/_custom_type_script = "uid://74gqrjs1tww4"
 
-[node name="Sprite2D" type="Sprite2D" parent="TestRotatableObject2" unique_id=1558746552]
+[node name="Sprite2D" type="Sprite2D" parent="PanelController/GamePanel2" unique_id=1558746552]
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("4_13k7l")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TestRotatableObject2" unique_id=1648902898]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PanelController/GamePanel2" unique_id=1648902898]
 shape = SubResource("RectangleShape2D_6w6ra")
 
-[node name="TestRotatableObject3" type="AnimatableBody2D" parent="." unique_id=429976072]
-position = Vector2(1342, 577)
-script = ExtResource("2_13k7l")
+[node name="GamePanel3" type="AnimatableBody2D" parent="PanelController" unique_id=765784456]
+position = Vector2(788, 577)
+script = ExtResource("3_yglgk")
+group = 1
+metadata/_custom_type_script = "uid://74gqrjs1tww4"
 
-[node name="Sprite2D" type="Sprite2D" parent="TestRotatableObject3" unique_id=1642691465]
+[node name="Sprite2D" type="Sprite2D" parent="PanelController/GamePanel3" unique_id=1642691465]
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("5_8xmsw")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TestRotatableObject3" unique_id=2064950398]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PanelController/GamePanel3" unique_id=2064950398]
 shape = SubResource("RectangleShape2D_4v1xc")

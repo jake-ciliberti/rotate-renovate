@@ -7,8 +7,8 @@ var level_number = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	level.teleport.connect(player.teleport)
-	# load_level(level_number) #TODO: doesn't work. fix!
+	level.reset.connect(_on_level_reset)
+	# load_level(level_number) # TODO: doesn't work. fix!
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -21,3 +21,6 @@ func load_level(new_level: int):
 
 func increment_level():
 	load_level(level_number + 1)
+
+func _on_level_reset(spawnpoint: Vector2):
+	player.teleport(spawnpoint)

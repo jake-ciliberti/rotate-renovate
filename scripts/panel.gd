@@ -1,19 +1,30 @@
-@abstract
-extends AnimatableBody2D
+class_name GamePanel extends AnimatableBody2D
 
-@export var initial_rotation_degrees: float
 @export var pivot: Vector2
 @export var group: int
 
+var initial_rotation_degrees = rotation_degrees
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	add_to_group("panels")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	pass
 
-#func rotate(group: int, ):
+func change_rotation(selected_group: int, rotation_change: float):
+	if selected_group != group:
+		return
+	
+	rotation += rotation_change
 
 func reset():
 	rotation_degrees = initial_rotation_degrees
+
+func highlight(selected_group: int):
+	if selected_group != group:
+		return
+	
+	else:
+		pass
