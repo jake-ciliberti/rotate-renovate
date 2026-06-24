@@ -18,7 +18,7 @@ func _ready() -> void:
 	make_groups()
 
 func make_groups() -> void:
-	pass
+	rotation_groups = [[]]
 
 func rotate_panels(delta: float) -> void:
 	rotation_direction = Input.get_axis("rotate_counterclockwise", "rotate_clockwise")
