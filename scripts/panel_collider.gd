@@ -11,16 +11,16 @@ func _ready() -> void:
 	create_bounds()
 
 # TODO: broken. create a new polygon class with a unique group, and use clipping to create the polygons. do queue_free() on all the old polygons first (as a signal)
-func create_bounds():
+func create_bounds() -> void:
 	
 	print(panels)
 	
 	polygon = default_polygon
 	
-	for i in panels:\
+	for i in panels:
 		polygon = Geometry2D.merge_polygons(polygon, i.get_polygon() * i.transform)[0]
 
-func _draw():
+func _draw() -> void:
 	var godot_blue : Color = Color("478cbf")
 	# We pass the PackedVector2Array to draw the shape.
 	draw_polygon(polygon, [ godot_blue ])

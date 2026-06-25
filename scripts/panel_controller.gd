@@ -5,6 +5,8 @@ var selected_rotation_group: int
 @export var number_of_groups: int = 1 # TODO: there should be a programmatic way to do this. figure that out
 @export var collider: PanelCollider
 
+var panels: Array[Node]
+
 func reset():
 	get_tree().call_group("panels", "reset")
 	collider._ready()

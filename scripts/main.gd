@@ -16,5 +16,5 @@ func _process(_delta: float) -> void:
 #func load_level(new_level: int):
 	#level_container.load_level(new_level)
 
-func _on_level_container_reset_player(spawnpoint: Vector2):
+func _on_level_container_reset_player(spawnpoint: Vector2) -> void:
 	player.teleport(spawnpoint)

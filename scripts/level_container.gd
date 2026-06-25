@@ -5,7 +5,7 @@ signal reset_player
 var level: Level
 var level_number = 0
 
-func _ready():
+func _ready() -> void:
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -15,12 +15,12 @@ func _process(_delta: float) -> void:
 	
 	pass
 
-func unload_level():
+func unload_level() -> void:
 	if (is_instance_valid(level)):
 		level.queue_free()
 	level = null
 
-func load_level(new_level: int):
+func load_level(new_level: int) -> void:
 	unload_level()
 	var level_path := "res://levels/level_%s.tscn" % new_level
 	var level_resource := load(level_path)

@@ -28,6 +28,7 @@ window/size/resizable=false
 [global_group]
 
 panels=""
+inverse_panels=""
 
 [input]
 

@@ -9,7 +9,7 @@ const JUMP_VELOCITY = -400.0
 var selected_rotation_group = 0
 var double_jump_available = true
 
-func teleport(new_position: Vector2):
+func teleport(new_position: Vector2) -> void:
 	position = new_position
 
 func _physics_process(delta: float) -> void:

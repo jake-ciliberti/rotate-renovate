@@ -19,10 +19,10 @@ func change_rotation(selected_group: int, rotation_change: float):
 	
 	rotation += rotation_change
 
-func reset():
+func reset() -> void:
 	rotation_degrees = initial_rotation_degrees
 
-func highlight(selected_group: int):
+func highlight(selected_group: int) -> void:
 	if selected_group != group:
 		return
 	
