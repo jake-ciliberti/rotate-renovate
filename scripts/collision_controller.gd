@@ -1,6 +1,6 @@
 class_name CollisionController extends StaticBody2D
 
-@export var wall_thickness := 30.0
+@export var wall_thickness := 400.0
 
 var panels: Array[Node]
 
@@ -8,6 +8,8 @@ var panels: Array[Node]
 func _ready() -> void:
 	# TODO: create a default floor or see if this can be empty
 	panels = get_tree().get_nodes_in_group("panels")
+	set_collision_mask_value(1, false)
+	set_collision_mask_value(2, true)
 	create_bounds()
 
 # TODO: broken. create a new polygon class with a unique group, and use clipping to create the polygons. do queue_free() on all the old polygons first (as a signal)
@@ -15,10 +17,10 @@ func create_bounds() -> void:
 	
 	get_tree().call_group("colliders", "queue_free")
 	
-	var combined_panels: Array[PackedVector2Array] = Geometry2D.merge_polygons(panels[0].get_polygon() * panels[0].transform, panels[0].get_polygon() * panels[0].transform)
+	var combined_panels: Array[PackedVector2Array] = Geometry2D.merge_polygons(panels[0].transform * panels[0].get_polygon(), panels[0].transform * panels[0].get_polygon())
 	
 	for i in panels:
-		combined_panels = Geometry2D.merge_polygons(combined_panels, i.get_polygon() * i.transform)
+		combined_panels = Geometry2D.merge_polygons(combined_panels, i.transform * i.get_polygon())
 	
 	for i in combined_panels:
 		build_walls(i)

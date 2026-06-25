@@ -1,6 +1,5 @@
 class_name GamePanel extends Polygon2D
 
-@export var pivot: Vector2
 @export var group: int
 
 var initial_rotation_degrees = rotation_degrees
