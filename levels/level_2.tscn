@@ -12,6 +12,7 @@ metadata/_custom_type_script = "uid://1hljlhp5cw2n"
 
 [node name="PanelController" type="AnimatableBody2D" parent="." unique_id=1692802524 node_paths=PackedStringArray("collider")]
 script = ExtResource("2_v5uil")
+number_of_groups = 2
 collider = NodePath("PanelCollider")
 metadata/_custom_type_script = "uid://ccmj71uqtvvjl"
 
@@ -22,8 +23,15 @@ uv = PackedVector2Array(312, 9, 313, 9, -286, 17, -282.54468, -198.09276, 308.51
 script = ExtResource("3_5722l")
 metadata/_custom_type_script = "uid://74gqrjs1tww4"
 
+[node name="GamePanel2" type="Polygon2D" parent="PanelController" unique_id=914137480]
+color = Color(1, 0, 1, 1)
+polygon = PackedVector2Array(-73, -44, 133, -40, 112, 82, -67, 64)
+script = ExtResource("3_5722l")
+group = 1
+metadata/_custom_type_script = "uid://74gqrjs1tww4"
+
 [node name="PanelCollider" type="CollisionPolygon2D" parent="PanelController" unique_id=1471820468]
-position = Vector2(18, 536)
-polygon = PackedVector2Array(-30, -5, 1090, -5, 1090, 33, -30, 33)
+build_mode = 1
+polygon = PackedVector2Array(-30, -25, 1090, -25, 1090, 33, -30, 33)
 script = ExtResource("4_5722l")
 metadata/_custom_type_script = "uid://csugk4jrxen7h"

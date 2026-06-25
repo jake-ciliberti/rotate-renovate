@@ -28,6 +28,7 @@ func _process(delta: float) -> void:
 	if Input.is_action_pressed("rotate_counterclockwise") or Input.is_action_pressed("rotate_clockwise"):
 		var rotation_direction = Input.get_axis("rotate_counterclockwise", "rotate_clockwise")
 		get_tree().call_group("panels", "change_rotation", selected_rotation_group, rotation_direction * Globals.ROTATION_SPEED * delta)
+		collider.create_bounds()
 	
 	if Input.is_action_just_pressed("select_prev") or Input.is_action_just_pressed("select_next"):
 		change_selection()

@@ -49,6 +49,7 @@ tile_map_data = PackedByteArray("AAAiABYAAAAEAA8AAAAiABcAAAAEABAAAAAjABYAAAAFAA8
 tile_set = ExtResource("2_823pn")
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=1974455694]
+visible = false
 scroll_scale = Vector2(1.2, 1)
 repeat_size = Vector2(1024, 0)
 autoscroll = Vector2(-15, 0)

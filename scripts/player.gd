@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 @export var sprite: AnimatedSprite2D
 
+var god_mode: bool = false
+
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 var selected_rotation_group = 0
@@ -11,6 +13,10 @@ func teleport(new_position: Vector2):
 	position = new_position
 
 func _physics_process(delta: float) -> void:
+	if Input.is_action_just_pressed("god_mode"):
+		god_mode = !god_mode
+		set_collision_mask_value(1, true)
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -42,5 +48,17 @@ func _physics_process(delta: float) -> void:
 		velocity += 2 * get_gravity() * delta
 		
 		sprite.flip_v = true
+		
+	if god_mode:
+		set_collision_mask_value(1, false)
+		
+		velocity.x = 0
+		velocity.y = 0
+		
+		velocity.x = direction * SPEED
+		
+		var y_direction := Input.get_axis("jump", "down")
+		if y_direction:
+			velocity.y = y_direction * SPEED
 	
 	move_and_slide()
