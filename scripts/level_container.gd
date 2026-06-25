@@ -11,7 +11,6 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("ui_text_backspace"):
-		print("oh yeah")
 		increment_level()
 	
 	pass
@@ -27,7 +26,7 @@ func load_level(new_level: int):
 	var level_resource := load(level_path)
 	
 	if !(level_resource):
-		level_number = 0
+		level_number = -1
 		return
 	
 	level = level_resource.instantiate()
@@ -35,6 +34,8 @@ func load_level(new_level: int):
 	level.reset.connect(_on_level_reset)
 	
 	add_child(level)
+	
+	level_number = new_level
 	
 	return
 

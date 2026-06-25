@@ -1,11 +1,13 @@
-class_name PanelController extends Node2D
+class_name PanelController extends AnimatableBody2D
 
 var selected_rotation_group: int
 
 @export var number_of_groups: int = 1 # TODO: there should be a programmatic way to do this. figure that out
+@export var collider: PanelCollider
 
 func reset():
 	get_tree().call_group("panels", "reset")
+	collider._ready()
 
 func change_selection():
 	var direction = Input.get_axis("select_prev", "select_next")

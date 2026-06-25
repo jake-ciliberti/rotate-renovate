@@ -19,17 +19,17 @@ script = ExtResource("1_yi3jx")
 spawnpoint = Vector2(512, 690)
 metadata/_custom_type_script = "uid://1hljlhp5cw2n"
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=488646170]
+[node name="GamePanel" type="StaticBody2D" parent="." unique_id=488646170]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1568789388]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GamePanel" unique_id=1568789388]
 position = Vector2(1040.5, 750)
 shape = SubResource("RectangleShape2D_eus5j")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1873756004]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="GamePanel" unique_id=1873756004]
 position = Vector2(48.55542, 754.78314)
 shape = SubResource("RectangleShape2D_823pn")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=1535384833]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="GamePanel" unique_id=1535384833]
 position = Vector2(0, 415)
 shape = SubResource("RectangleShape2D_6w6ra")
 

@@ -1,3 +1,3 @@
 extends Node
 
-const ROTATION_SPEED = 5.0
+const ROTATION_SPEED = 3.0

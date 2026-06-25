@@ -1,4 +1,4 @@
-class_name GamePanel extends AnimatableBody2D
+class_name GamePanel extends Polygon2D
 
 @export var pivot: Vector2
 @export var group: int

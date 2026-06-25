@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://2ste10ul7alj"]
+
+[ext_resource type="Script" uid="uid://1hljlhp5cw2n" path="res://scripts/level.gd" id="1_0srwa"]
+[ext_resource type="Script" uid="uid://ccmj71uqtvvjl" path="res://scripts/panel_controller.gd" id="2_v5uil"]
+[ext_resource type="Script" uid="uid://74gqrjs1tww4" path="res://scripts/panel.gd" id="3_5722l"]
+[ext_resource type="Script" uid="uid://csugk4jrxen7h" path="res://scripts/panel_collider.gd" id="4_5722l"]
+
+[node name="Level" type="Node2D" unique_id=1248532620 node_paths=PackedStringArray("panel_controller")]
+script = ExtResource("1_0srwa")
+panel_controller = NodePath("PanelController")
+metadata/_custom_type_script = "uid://1hljlhp5cw2n"
+
+[node name="PanelController" type="AnimatableBody2D" parent="." unique_id=1692802524 node_paths=PackedStringArray("collider")]
+script = ExtResource("2_v5uil")
+collider = NodePath("PanelCollider")
+metadata/_custom_type_script = "uid://ccmj71uqtvvjl"
+
+[node name="GamePanel" type="Polygon2D" parent="PanelController" unique_id=1406520985]
+position = Vector2(510, 538)
+polygon = PackedVector2Array(312, 9, 313, 9, -286, 17, -282.54468, -198.09276, 308.51257, -204.5348)
+uv = PackedVector2Array(312, 9, 313, 9, -286, 17, -282.54468, -198.09276, 308.51257, -204.5348)
+script = ExtResource("3_5722l")
+metadata/_custom_type_script = "uid://74gqrjs1tww4"
+
+[node name="PanelCollider" type="CollisionPolygon2D" parent="PanelController" unique_id=1471820468]
+position = Vector2(18, 536)
+polygon = PackedVector2Array(-30, -5, 1090, -5, 1090, 33, -30, 33)
+script = ExtResource("4_5722l")
+metadata/_custom_type_script = "uid://csugk4jrxen7h"
