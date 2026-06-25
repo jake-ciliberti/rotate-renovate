@@ -7,7 +7,8 @@ var panels: Array[Node]
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	# TODO: create a default floor or see if this can be empty
-	panels = get_tree().get_nodes_in_group("panels")
+	if (get_tree()):
+		panels = get_tree().get_nodes_in_group("current_panels")
 	set_collision_mask_value(1, false)
 	set_collision_mask_value(2, true)
 	create_bounds()
@@ -17,15 +18,20 @@ func create_bounds() -> void:
 	
 	get_tree().call_group("colliders", "queue_free")
 	
-	var combined_panels: Array[PackedVector2Array] = Geometry2D.merge_polygons(panels[0].transform * panels[0].get_polygon(), panels[0].transform * panels[0].get_polygon())
+	var combined_panels: Array[PackedVector2Array]
+	
+	if panels.size() == 0:
+		return
+	
+	combined_panels = Geometry2D.merge_polygons(panels[0].get_global_position_and_rotation(), panels[0].get_global_position_and_rotation())
 	
 	for i in panels:
-		combined_panels = Geometry2D.merge_polygons(combined_panels, i.transform * i.get_polygon())
+		combined_panels = Geometry2D.merge_polygons(combined_panels[0], i.get_global_position_and_rotation())
 	
 	for i in combined_panels:
 		build_walls(i)
 
-func build_walls(poly):
+func build_walls(poly) -> void:
 	var count = poly.size()
 	for i in count:
 		var a = poly[i]
@@ -47,4 +53,4 @@ func build_walls(poly):
 		])
 		var new_panel_collider = PanelCollider.new()
 		new_panel_collider.polygon = quad
-		add_child(new_panel_collider)
+		add_child.call_deferred(new_panel_collider)

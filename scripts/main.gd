@@ -12,9 +12,5 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	pass
 
-# NOTE: switching levels this way requires changing the z-index of Player. There's probably a better way to do this.
-#func load_level(new_level: int):
-	#level_container.load_level(new_level)
-
 func _on_level_container_reset_player(spawnpoint: Vector2) -> void:
 	player.teleport(spawnpoint)

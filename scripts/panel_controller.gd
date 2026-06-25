@@ -5,11 +5,14 @@ var selected_rotation_group: int
 @export var number_of_groups: int = 1 # TODO: there should be a programmatic way to do this. figure that out
 @export var collision: CollisionController
 
-func reset():
+func _ready() -> void:
+	Globals.redraw.connect(collision._ready)
+
+func reset() -> void:
 	get_tree().call_group("panels", "reset")
 	collision._ready()
 
-func change_selection():
+func change_selection() -> void:
 	var direction = Input.get_axis("select_prev", "select_next")
 	
 	if direction > 0:

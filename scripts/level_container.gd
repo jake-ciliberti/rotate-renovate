@@ -12,8 +12,6 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("ui_text_backspace"):
 		increment_level()
-	
-	pass
 
 func unload_level() -> void:
 	if (is_instance_valid(level)):

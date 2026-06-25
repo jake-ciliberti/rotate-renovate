@@ -4,7 +4,7 @@ class_name PanelCollider extends CollisionPolygon2D
 func _ready() -> void:
 	add_to_group("colliders")
 
-func _draw():
+func _draw() -> void:
 	# We are going to paint with this color.
 	var godot_blue : Color = Color("478cbf")
 	# We pass the PackedVector2Array to draw the shape.
