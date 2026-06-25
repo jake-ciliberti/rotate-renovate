@@ -5,14 +5,16 @@
 [ext_resource type="Script" uid="uid://74gqrjs1tww4" path="res://scripts/panel.gd" id="3_5722l"]
 [ext_resource type="Script" uid="uid://csugk4jrxen7h" path="res://scripts/panel_collider.gd" id="4_5722l"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6w6ra"]
+size = Vector2(1024, 30)
+
 [node name="Level" type="Node2D" unique_id=1248532620 node_paths=PackedStringArray("panel_controller")]
 script = ExtResource("1_0srwa")
 panel_controller = NodePath("PanelController")
 metadata/_custom_type_script = "uid://1hljlhp5cw2n"
 
-[node name="PanelController" type="AnimatableBody2D" parent="." unique_id=1692802524 node_paths=PackedStringArray("collider")]
+[node name="PanelController" type="Node2D" parent="." unique_id=918188588 node_paths=PackedStringArray("collider")]
 script = ExtResource("2_v5uil")
-number_of_groups = 2
 collider = NodePath("PanelCollider")
 metadata/_custom_type_script = "uid://ccmj71uqtvvjl"
 
@@ -27,11 +29,12 @@ metadata/_custom_type_script = "uid://74gqrjs1tww4"
 color = Color(1, 0, 1, 1)
 polygon = PackedVector2Array(-73, -44, 133, -40, 112, 82, -67, 64)
 script = ExtResource("3_5722l")
-group = 1
 metadata/_custom_type_script = "uid://74gqrjs1tww4"
 
-[node name="PanelCollider" type="CollisionPolygon2D" parent="PanelController" unique_id=1471820468]
-build_mode = 1
-polygon = PackedVector2Array(-30, -25, 1090, -25, 1090, 33, -30, 33)
+[node name="PanelCollider" type="StaticBody2D" parent="PanelController" unique_id=181164816]
 script = ExtResource("4_5722l")
 metadata/_custom_type_script = "uid://csugk4jrxen7h"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PanelController/PanelCollider" unique_id=1095858909]
+position = Vector2(512, 825)
+shape = SubResource("RectangleShape2D_6w6ra")
