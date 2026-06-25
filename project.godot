@@ -28,7 +28,8 @@ window/size/resizable=false
 [global_group]
 
 panels=""
-inverse_panels=""
+current_panels=""
+colliders=""
 
 [input]
 

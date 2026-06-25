@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://1hljlhp5cw2n" path="res://scripts/level.gd" id="1_0srwa"]
 [ext_resource type="Script" uid="uid://ccmj71uqtvvjl" path="res://scripts/panel_controller.gd" id="2_v5uil"]
 [ext_resource type="Script" uid="uid://74gqrjs1tww4" path="res://scripts/panel.gd" id="3_5722l"]
-[ext_resource type="Script" uid="uid://csugk4jrxen7h" path="res://scripts/panel_collider.gd" id="4_5722l"]
+[ext_resource type="Script" uid="uid://b6x7sm5ynop2t" path="res://scripts/collision_controller.gd" id="4_v5uil"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6w6ra"]
 size = Vector2(1024, 30)
@@ -13,9 +13,9 @@ script = ExtResource("1_0srwa")
 panel_controller = NodePath("PanelController")
 metadata/_custom_type_script = "uid://1hljlhp5cw2n"
 
-[node name="PanelController" type="Node2D" parent="." unique_id=918188588 node_paths=PackedStringArray("collider")]
+[node name="PanelController" type="Node2D" parent="." unique_id=918188588 node_paths=PackedStringArray("collision")]
 script = ExtResource("2_v5uil")
-collider = NodePath("PanelCollider")
+collision = NodePath("CollisionController")
 metadata/_custom_type_script = "uid://ccmj71uqtvvjl"
 
 [node name="GamePanel" type="Polygon2D" parent="PanelController" unique_id=1406520985]
@@ -31,10 +31,10 @@ polygon = PackedVector2Array(-73, -44, 133, -40, 112, 82, -67, 64)
 script = ExtResource("3_5722l")
 metadata/_custom_type_script = "uid://74gqrjs1tww4"
 
-[node name="PanelCollider" type="StaticBody2D" parent="PanelController" unique_id=181164816]
-script = ExtResource("4_5722l")
+[node name="CollisionController" type="StaticBody2D" parent="PanelController" unique_id=655613781]
+script = ExtResource("4_v5uil")
 metadata/_custom_type_script = "uid://csugk4jrxen7h"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PanelController/PanelCollider" unique_id=1095858909]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PanelController/CollisionController" unique_id=1095858909]
 position = Vector2(512, 825)
 shape = SubResource("RectangleShape2D_6w6ra")
