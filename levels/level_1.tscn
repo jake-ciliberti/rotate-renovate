@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://de1ufrp6f2ggg" path="res://scripts/collision_polygon_2d.gd" id="5_gwceb"]
 [ext_resource type="Script" uid="uid://cg1q082726f4t" path="res://scripts/door.gd" id="6_gwceb"]
 [ext_resource type="Texture2D" uid="uid://by1434yc5ndb8" path="res://circle_PNG14-2552655912.png" id="6_l53as"]
+[ext_resource type="Texture2D" uid="uid://bska1iimvrabn" path="res://sprites/vent.png" id="7_l53as"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n46q3"]
 size = Vector2(1024, 30)
@@ -50,6 +51,11 @@ metadata/_custom_type_script = "uid://cg1q082726f4t"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PanelController/GamePanel/Door" unique_id=339584700]
 position = Vector2(0, -300)
 shape = SubResource("RectangleShape2D_6w6ra")
+
+[node name="Sprite2D" type="Sprite2D" parent="PanelController/GamePanel/Door/CollisionShape2D" unique_id=1289139950]
+rotation = 3.1415927
+scale = Vector2(2, 2)
+texture = ExtResource("7_l53as")
 
 [node name="CirclePng142552655912" type="Sprite2D" parent="." unique_id=1969050604]
 visible = false

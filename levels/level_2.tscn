@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://de1ufrp6f2ggg" path="res://scripts/collision_polygon_2d.gd" id="4_5722l"]
 [ext_resource type="Script" uid="uid://b6x7sm5ynop2t" path="res://scripts/collision_controller.gd" id="4_v5uil"]
 [ext_resource type="Script" uid="uid://cg1q082726f4t" path="res://scripts/door.gd" id="6_ilhis"]
+[ext_resource type="Texture2D" uid="uid://bska1iimvrabn" path="res://sprites/vent.png" id="7_ep78u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6w6ra"]
 size = Vector2(1024, 30)
@@ -53,6 +54,10 @@ metadata/_custom_type_script = "uid://cg1q082726f4t"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PanelController/GamePanel/Door" unique_id=355025593]
 shape = SubResource("RectangleShape2D_ep78u")
+
+[node name="Sprite2D" type="Sprite2D" parent="PanelController/GamePanel/Door" unique_id=1593375517]
+scale = Vector2(2, 2)
+texture = ExtResource("7_ep78u")
 
 [node name="GamePanel2" type="Area2D" parent="PanelController" unique_id=568019450 node_paths=PackedStringArray("hitbox")]
 position = Vector2(331, 441)
