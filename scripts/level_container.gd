@@ -37,7 +37,6 @@ func load_level(new_level: int) -> void:
 	
 	return
 
-
 func increment_level():
 	load_level(level_number + 1)
 

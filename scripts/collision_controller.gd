@@ -37,7 +37,7 @@ func make_static_bounds() -> void:
 	
 func make_moving_bounds() -> void:
 	var combined_panels = create_bounds()
-	build_walls(create_bounds())
+	build_walls(combined_panels)
 	make_static_bounds()
 
 func build_walls(poly) -> void:

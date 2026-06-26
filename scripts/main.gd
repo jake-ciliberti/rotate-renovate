@@ -8,7 +8,6 @@ extends Node2D
 func _ready() -> void:
 	level_container.reset_player.connect(_on_level_container_reset_player)
 	menu.load_level.connect(_on_menu_load_level)
-	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
