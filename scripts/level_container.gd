@@ -34,11 +34,12 @@ func load_level(new_level: int) -> void:
 	add_child(level)
 	
 	level_number = new_level
-	
-	return
 
-func increment_level():
+func increment_level() -> void:
 	load_level(level_number + 1)
 
-func _on_level_reset(spawnpoint: Vector2):
+func _on_level_reset(spawnpoint: Vector2) -> void:
 	reset_player.emit(spawnpoint)
+
+func _on_level_finished() -> void:
+	increment_level()

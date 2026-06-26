@@ -30,6 +30,7 @@ window/size/resizable=false
 panels=""
 current_panels=""
 colliders=""
+doors=""
 
 [input]
 

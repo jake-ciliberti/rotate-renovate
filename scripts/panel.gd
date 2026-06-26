@@ -5,6 +5,8 @@ class_name GamePanel extends Area2D
 
 var initial_rotation_degrees = rotation_degrees
 
+signal redraw
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	monitoring = true
@@ -38,12 +40,12 @@ func highlight(selected_group: int) -> void:
 func _on_body_entered(body: Node2D):
 	if (body.name == "Player"):
 		add_to_group("current_panels")
-		Globals.redraw.emit()
+		redraw.emit()
 
 func _on_body_exited(body: Node2D):
 	if (body.name == "Player"):
 		remove_from_group("current_panels")
-		Globals.redraw.emit()
+		redraw.emit()
 
 func _exit_tree() -> void:
 	remove_from_group("current_panels")

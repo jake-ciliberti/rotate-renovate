@@ -5,10 +5,14 @@
 [ext_resource type="Script" uid="uid://b6x7sm5ynop2t" path="res://scripts/collision_controller.gd" id="3_kx6l7"]
 [ext_resource type="Script" uid="uid://74gqrjs1tww4" path="res://scripts/panel.gd" id="4_btoec"]
 [ext_resource type="Script" uid="uid://de1ufrp6f2ggg" path="res://scripts/collision_polygon_2d.gd" id="5_gwceb"]
+[ext_resource type="Script" uid="uid://cg1q082726f4t" path="res://scripts/door.gd" id="6_gwceb"]
 [ext_resource type="Texture2D" uid="uid://by1434yc5ndb8" path="res://circle_PNG14-2552655912.png" id="6_l53as"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n46q3"]
 size = Vector2(1024, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6w6ra"]
+size = Vector2(32, 48)
 
 [node name="Level" type="Node2D" unique_id=1011466160 node_paths=PackedStringArray("panel_controller")]
 script = ExtResource("1_r3hui")
@@ -28,16 +32,27 @@ metadata/_custom_type_script = "uid://b6x7sm5ynop2t"
 position = Vector2(512, 825)
 shape = SubResource("RectangleShape2D_n46q3")
 
-[node name="GamePanel" type="Area2D" parent="PanelController" unique_id=1142248548]
+[node name="GamePanel" type="Area2D" parent="PanelController" unique_id=1142248548 node_paths=PackedStringArray("hitbox")]
+position = Vector2(512, 350)
 script = ExtResource("4_btoec")
+hitbox = NodePath("PanelHitbox")
 metadata/_custom_type_script = "uid://74gqrjs1tww4"
 
 [node name="PanelHitbox" type="CollisionPolygon2D" parent="PanelController/GamePanel" unique_id=1107263741]
-polygon = PackedVector2Array(512, 58, 641, 82, 748, 153, 823, 262, 842, 384, 817, 527, 741, 628, 640, 695, 506, 724, 373, 691, 262, 616, 204, 519, 178, 397, 210, 258, 277, 157, 385, 87)
+polygon = PackedVector2Array(0, -332, 127.05, -306.73, 234.76, -234.76, 306.73, -127.05, 332, 0, 306.73, 127.05, 234.76, 234.76, 127.05, 306.73, 0, 332, -127.05, 306.73, -234.76, 234.76, -306.73, 127.05, -332, 0, -306.73, -127.05, -234.76, -234.76, -127.05, -306.73)
 script = ExtResource("5_gwceb")
 metadata/_custom_type_script = "uid://de1ufrp6f2ggg"
 
+[node name="Door" type="Area2D" parent="PanelController/GamePanel" unique_id=100817850]
+script = ExtResource("6_gwceb")
+metadata/_custom_type_script = "uid://cg1q082726f4t"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PanelController/GamePanel/Door" unique_id=339584700]
+position = Vector2(0, -300)
+shape = SubResource("RectangleShape2D_6w6ra")
+
 [node name="CirclePng142552655912" type="Sprite2D" parent="." unique_id=1969050604]
+visible = false
 position = Vector2(511.99997, 390)
 scale = Vector2(0.22477925, 0.22477925)
 texture = ExtResource("6_l53as")

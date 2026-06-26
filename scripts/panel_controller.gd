@@ -6,7 +6,8 @@ var selected_rotation_group: int
 @export var collision: CollisionController
 
 func _ready() -> void:
-	Globals.redraw.connect(collision._ready)
+	for i in get_tree().get_nodes_in_group("panels"):
+		i.redraw.connect(collision._ready)
 
 func reset() -> void:
 	get_tree().call_group("panels", "reset")
