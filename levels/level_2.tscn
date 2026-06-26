@@ -5,12 +5,17 @@
 [ext_resource type="Script" uid="uid://74gqrjs1tww4" path="res://scripts/panel.gd" id="3_5722l"]
 [ext_resource type="Script" uid="uid://de1ufrp6f2ggg" path="res://scripts/collision_polygon_2d.gd" id="4_5722l"]
 [ext_resource type="Script" uid="uid://b6x7sm5ynop2t" path="res://scripts/collision_controller.gd" id="4_v5uil"]
+[ext_resource type="Script" uid="uid://cg1q082726f4t" path="res://scripts/door.gd" id="6_ilhis"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6w6ra"]
 size = Vector2(1024, 30)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ep78u"]
+size = Vector2(32, 48)
+
 [node name="Level" type="Node2D" unique_id=1248532620 node_paths=PackedStringArray("panel_controller")]
 script = ExtResource("1_0srwa")
+spawnpoint = Vector2(331, 441)
 panel_controller = NodePath("PanelController")
 metadata/_custom_type_script = "uid://1hljlhp5cw2n"
 
@@ -29,34 +34,35 @@ position = Vector2(512, 825)
 shape = SubResource("RectangleShape2D_6w6ra")
 
 [node name="GamePanel" type="Area2D" parent="PanelController" unique_id=1688199483 node_paths=PackedStringArray("hitbox")]
-position = Vector2(510, 538)
+position = Vector2(804, 441)
+rotation = 4.712389
 script = ExtResource("3_5722l")
 hitbox = NodePath("CollisionPolygon2D")
 metadata/_custom_type_script = "uid://74gqrjs1tww4"
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PanelController/GamePanel" unique_id=952933328]
-polygon = PackedVector2Array(311, 9, -286, 17, -282, -200, 302, -206)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PanelController/GamePanel" unique_id=1068057270]
+scale = Vector2(2, 1)
+polygon = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
 script = ExtResource("4_5722l")
 metadata/_custom_type_script = "uid://de1ufrp6f2ggg"
+
+[node name="Door" type="Area2D" parent="PanelController/GamePanel" unique_id=1148696414]
+position = Vector2(0, 97)
+script = ExtResource("6_ilhis")
+metadata/_custom_type_script = "uid://cg1q082726f4t"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PanelController/GamePanel/Door" unique_id=355025593]
+shape = SubResource("RectangleShape2D_ep78u")
 
 [node name="GamePanel2" type="Area2D" parent="PanelController" unique_id=568019450 node_paths=PackedStringArray("hitbox")]
-script = ExtResource("3_5722l")
-hitbox = NodePath("CollisionPolygon2D")
-metadata/_custom_type_script = "uid://74gqrjs1tww4"
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PanelController/GamePanel2" unique_id=29737201]
-polygon = PackedVector2Array(-73, -44, 133, -40, 112, 82, -67, 64)
-script = ExtResource("4_5722l")
-metadata/_custom_type_script = "uid://de1ufrp6f2ggg"
-
-[node name="GamePanel3" type="Area2D" parent="PanelController" unique_id=720127323 node_paths=PackedStringArray("hitbox")]
-position = Vector2(153, 420)
+position = Vector2(331, 441)
 script = ExtResource("3_5722l")
 group = 1
 hitbox = NodePath("CollisionPolygon2D")
 metadata/_custom_type_script = "uid://74gqrjs1tww4"
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PanelController/GamePanel3" unique_id=846604865]
-polygon = PackedVector2Array(195, 87, 103, 187, -204, -121, -117, -181)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PanelController/GamePanel2" unique_id=29737201]
+scale = Vector2(1, 2)
+polygon = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
 script = ExtResource("4_5722l")
 metadata/_custom_type_script = "uid://de1ufrp6f2ggg"
