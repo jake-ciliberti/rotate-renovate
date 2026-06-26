@@ -6,14 +6,16 @@
 [ext_resource type="Script" uid="uid://c3oct0bddmw1p" path="res://scripts/level_container.gd" id="3_27j3i"]
 [ext_resource type="TileSet" uid="uid://ciylkriooxq3g" path="res://sprites/tiles/Ocean.tres" id="5_xgtrc"]
 [ext_resource type="PackedScene" uid="uid://cv2y0prs3enhs" path="res://menu.tscn" id="6_p0puv"]
+[ext_resource type="Script" uid="uid://c1dmol6su5h7r" path="res://scripts/player_container.gd" id="7_27j3i"]
 
 [node name="Rotate-Renovate" type="Node2D" unique_id=1818220576 node_paths=PackedStringArray("player", "level_container", "menu")]
 script = ExtResource("1_xgtrc")
 player = NodePath("Player")
 level_container = NodePath("level_container")
-menu = NodePath("MenuParallax/Control")
+menu = NodePath("CanvasLayer/Control")
 
 [node name="background" parent="." unique_id=534743633 instance=ExtResource("1_gcghl")]
+z_index = -1
 
 [node name="level_container" type="Node2D" parent="." unique_id=516695850]
 script = ExtResource("3_27j3i")
@@ -44,7 +46,13 @@ position_smoothing_enabled = true
 editor_draw_limits = true
 editor_draw_drag_margin = true
 
-[node name="MenuParallax" type="Parallax2D" parent="." unique_id=2109883924]
-scroll_scale = Vector2(0, 0)
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1878185730]
 
-[node name="Control" parent="MenuParallax" unique_id=183645100 instance=ExtResource("6_p0puv")]
+[node name="Control" parent="CanvasLayer" unique_id=183645100 instance=ExtResource("6_p0puv")]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=733830979]
+script = ExtResource("7_27j3i")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=905859222]
+build_mode = 1
+polygon = PackedVector2Array(-32, -37, -70, 937, 1088, 933, 1063, -40)

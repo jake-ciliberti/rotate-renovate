@@ -9,5 +9,4 @@ func _ready() -> void:
 
 func _on_body_entered(body: Node2D):
 	if (body.name == "Player"):
-		print("level finished!")
 		level_finished.emit()

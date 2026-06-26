@@ -32,10 +32,10 @@ func get_global_position_and_rotation() -> PackedVector2Array:
 
 func highlight(selected_group: int) -> void:
 	if selected_group != group:
-		return
+		hitbox.visible = false
 	
 	else:
-		pass
+		hitbox.visible = true
 
 func _on_body_entered(body: Node2D):
 	if (body.name == "Player"):

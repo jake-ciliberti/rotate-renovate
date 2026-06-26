@@ -14,6 +14,7 @@ func _process(_delta: float) -> void:
 		increment_level()
 
 func unload_level() -> void:
+	get_tree().call_group("kill", "queue_free")
 	if (is_instance_valid(level)):
 		level.queue_free()
 	level = null

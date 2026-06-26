@@ -3,6 +3,7 @@ extends CharacterBody2D
 @export var sprite: AnimatedSprite2D
 
 var god_mode: bool = false
+var is_swimming: bool = false
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
@@ -48,7 +49,13 @@ func _physics_process(delta: float) -> void:
 		velocity += 2 * get_gravity() * delta
 		
 		sprite.flip_v = true
+	
+	if is_swimming:
+		velocity.x *= 0.5
+		velocity.y *= 0.5
 		
+		double_jump_available = true
+	
 	if god_mode:
 		set_collision_mask_value(1, false)
 		
