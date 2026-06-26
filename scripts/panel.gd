@@ -1,7 +1,7 @@
 class_name GamePanel extends Area2D
 
 @export var group: int
-@export var hitbox: CollisionPolygon2D
+@export var hitbox: PanelHitbox
 
 var initial_rotation_degrees = rotation_degrees
 

@@ -1,4 +1,4 @@
-extends CollisionPolygon2D
+class_name PanelHitbox extends CollisionPolygon2D
 
 func _draw() -> void:
 	# We are going to paint with this color.

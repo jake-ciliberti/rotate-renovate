@@ -28,8 +28,6 @@ func create_bounds() -> PackedVector2Array:
 	for i in panels:
 		combined_panels = Geometry2D.merge_polygons(combined_panels, i.get_global_position_and_rotation())[0]
 	
-	print(combined_panels)
-	
 	return combined_panels
 
 func make_static_bounds() -> void:
