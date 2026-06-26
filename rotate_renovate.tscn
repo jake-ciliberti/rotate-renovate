@@ -36,6 +36,14 @@ stream = ExtResource("5_c21k2")
 volume_db = -20.0
 autoplay = true
 
+[node name="CanvasLayer" type="CanvasLayer" parent="level_container" unique_id=2000857600]
+
+[node name="Control" type="Control" parent="level_container/CanvasLayer" unique_id=1748702673]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=1623662369]
 scroll_scale = Vector2(1.2, 1)
 repeat_size = Vector2(1024, 0)

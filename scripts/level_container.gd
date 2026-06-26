@@ -36,7 +36,10 @@ func load_level(new_level: int) -> void:
 	
 	level.reset.connect(_on_level_reset)
 	
-	add_child(level)
+	if level.door:
+		level.door.level_finished.connect(_on_level_finished)
+	
+	add_child.call_deferred(level)
 	
 	level_number = new_level
 	

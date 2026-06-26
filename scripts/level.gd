@@ -3,6 +3,7 @@ class_name Level extends Node2D
 # level setup
 @export var spawnpoint: Vector2 = Vector2(512, 408)
 @export var group_number: int
+@export var door: Door
 
 @export var panel_controller: PanelController = get_node_or_null("PanelController") # TODO: make this programmatic
 

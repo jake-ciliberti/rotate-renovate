@@ -14,8 +14,9 @@ size = Vector2(1024, 30)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6w6ra"]
 size = Vector2(32, 48)
 
-[node name="Level" type="Node2D" unique_id=1011466160 node_paths=PackedStringArray("panel_controller")]
+[node name="Level" type="Node2D" unique_id=1011466160 node_paths=PackedStringArray("door", "panel_controller")]
 script = ExtResource("1_r3hui")
+door = NodePath("PanelController/GamePanel/Door")
 panel_controller = NodePath("PanelController")
 metadata/_custom_type_script = "uid://1hljlhp5cw2n"
 
