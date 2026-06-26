@@ -10,6 +10,9 @@ const JUMP_VELOCITY = -400.0
 var selected_rotation_group = 0
 var double_jump_available = true
 
+func _ready():
+	sprite.play("default")
+
 func teleport(new_position: Vector2) -> void:
 	position = new_position
 
@@ -30,6 +33,11 @@ func _physics_process(delta: float) -> void:
 		elif double_jump_available:
 			velocity.y = JUMP_VELOCITY
 			double_jump_available = false
+	
+	elif !Input.is_action_pressed("move_left") and !Input.is_action_pressed("move_right"):
+		sprite.play("default")
+	if Input.is_action_just_pressed("move_left") or Input.is_action_just_pressed("move_right"):
+		sprite.play("running")
 	
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.

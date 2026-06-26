@@ -3,6 +3,7 @@ extends Node2D
 signal reset_player
 
 @export var background_music: AudioStreamPlayer
+@export var menu_music: AudioStreamPlayer
 
 var level: Level
 var level_number = 0
@@ -41,6 +42,7 @@ func load_level(new_level: int) -> void:
 	
 	if level_number > 0:
 		background_music.stream_paused = false
+		menu_music.stop()
 
 func increment_level() -> void:
 	load_level(level_number + 1)

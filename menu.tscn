@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://cv2y0prs3enhs"]
 
 [ext_resource type="Script" uid="uid://cj38vnswc5sm1" path="res://scripts/menu.gd" id="1_nlkkf"]
-[ext_resource type="Texture2D" uid="uid://21ywc44783nt" path="res://sprites/menu/green.png" id="2_glbon"]
 [ext_resource type="Texture2D" uid="uid://dswa05h7u8xo7" path="res://sprites/ratford/lil_ratford.png" id="4_qe12f"]
 [ext_resource type="Script" uid="uid://i7k4ncnolrgq" path="res://scripts/level_select.gd" id="5_ytr4m"]
 [ext_resource type="Script" uid="uid://bo180hgf7p1k6" path="res://scripts/start_button.gd" id="6_qe12f"]
@@ -30,30 +29,22 @@ offset_right = 1019.0
 offset_bottom = 806.0
 color = Color(0, 0, 0, 0.5882353)
 
-[node name="Green" type="Sprite2D" parent="." unique_id=1986141387]
-position = Vector2(251.00002, 246)
-scale = Vector2(3.0185184, 2.7083333)
-texture = ExtResource("2_glbon")
-
-[node name="LilRatford" type="Sprite2D" parent="." unique_id=235940228]
-position = Vector2(677, 587)
-scale = Vector2(4.265625, 4.578125)
-texture = ExtResource("4_qe12f")
-
 [node name="start_button" type="Button" parent="." unique_id=848049087]
 layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = 430.0
+offset_top = 254.0
+offset_right = 594.0
+offset_bottom = 326.0
 text = "Start Game"
 icon = ExtResource("4_qe12f")
 script = ExtResource("6_qe12f")
 
 [node name="select_level" type="Button" parent="." unique_id=1569364535 node_paths=PackedStringArray("number_input")]
 layout_mode = 0
-offset_left = 9.0
-offset_top = 155.0
-offset_right = 17.0
-offset_bottom = 163.0
+offset_left = 432.0
+offset_top = 360.0
+offset_right = 531.0
+offset_bottom = 391.0
 text = "Select level:"
 script = ExtResource("5_ytr4m")
 number_input = NodePath("LineEdit")

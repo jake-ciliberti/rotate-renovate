@@ -5,9 +5,12 @@
 [ext_resource type="Script" uid="uid://bmmwv0w367npj" path="res://scripts/main.gd" id="1_xgtrc"]
 [ext_resource type="Script" uid="uid://c3oct0bddmw1p" path="res://scripts/level_container.gd" id="3_27j3i"]
 [ext_resource type="AudioStream" uid="uid://c3jujvrsjgjo1" path="res://Groovy Saturday.ogg" id="4_lwflv"]
+[ext_resource type="AudioStream" uid="uid://b55ecm8lwupjp" path="res://Dangerous Path.ogg" id="5_c21k2"]
 [ext_resource type="TileSet" uid="uid://ciylkriooxq3g" path="res://sprites/tiles/Ocean.tres" id="5_xgtrc"]
 [ext_resource type="PackedScene" uid="uid://cv2y0prs3enhs" path="res://menu.tscn" id="6_p0puv"]
-[ext_resource type="Script" uid="uid://c1dmol6su5h7r" path="res://scripts/player_container.gd" id="7_27j3i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6w6ra"]
+size = Vector2(1023.5, 437)
 
 [node name="Rotate-Renovate" type="Node2D" unique_id=1818220576 node_paths=PackedStringArray("player", "level_container", "menu")]
 script = ExtResource("1_xgtrc")
@@ -18,12 +21,18 @@ menu = NodePath("CanvasLayer/Control")
 [node name="background" parent="." unique_id=534743633 instance=ExtResource("1_gcghl")]
 z_index = -1
 
-[node name="level_container" type="Node2D" parent="." unique_id=516695850 node_paths=PackedStringArray("background_music")]
+[node name="level_container" type="Node2D" parent="." unique_id=516695850 node_paths=PackedStringArray("background_music", "menu_music")]
 script = ExtResource("3_27j3i")
-background_music = NodePath("AudioStreamPlayer")
+background_music = NodePath("happy_music")
+menu_music = NodePath("ominous_music")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="level_container" unique_id=967421650]
+[node name="happy_music" type="AudioStreamPlayer" parent="level_container" unique_id=967421650]
 stream = ExtResource("4_lwflv")
+volume_db = -20.0
+autoplay = true
+
+[node name="ominous_music" type="AudioStreamPlayer" parent="level_container" unique_id=16410584]
+stream = ExtResource("5_c21k2")
 volume_db = -20.0
 autoplay = true
 
@@ -42,7 +51,7 @@ tile_set = ExtResource("5_xgtrc")
 
 [node name="Player" parent="." unique_id=364368371 instance=ExtResource("1_i3bn0")]
 z_index = 3
-position = Vector2(512, 405)
+position = Vector2(512, 827)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=769330519]
 position = Vector2(-512, -404.99994)
@@ -53,13 +62,16 @@ position_smoothing_enabled = true
 editor_draw_limits = true
 editor_draw_drag_margin = true
 
+[node name="Parallax2D2" type="Parallax2D" parent="." unique_id=1459536336]
+repeat_size = Vector2(1024, 0)
+repeat_times = 3
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Parallax2D2" unique_id=2063598310]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Parallax2D2/StaticBody2D" unique_id=691051273]
+position = Vector2(512, 1062.5)
+shape = SubResource("RectangleShape2D_6w6ra")
+
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1878185730]
 
 [node name="Control" parent="CanvasLayer" unique_id=183645100 instance=ExtResource("6_p0puv")]
-
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=733830979]
-script = ExtResource("7_27j3i")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=905859222]
-build_mode = 1
-polygon = PackedVector2Array(-32, -37, -70, 937, 1088, 933, 1063, -40)
