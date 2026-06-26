@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://cv2y0prs3enhs"]
+
+[ext_resource type="Script" uid="uid://cj38vnswc5sm1" path="res://scripts/menu.gd" id="1_nlkkf"]
+[ext_resource type="Texture2D" uid="uid://21ywc44783nt" path="res://sprites/menu/green.png" id="2_glbon"]
+[ext_resource type="Texture2D" uid="uid://dswa05h7u8xo7" path="res://sprites/ratford/lil_ratford.png" id="4_qe12f"]
+[ext_resource type="Script" uid="uid://bo180hgf7p1k6" path="res://scripts/start_button.gd" id="6_qe12f"]
+
+[node name="Control" type="Control" unique_id=183645100 node_paths=PackedStringArray("start")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 11.0
+offset_top = 7.0
+offset_right = 11.0
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nlkkf")
+start = NodePath("start_button")
+
+[node name="Green" type="Sprite2D" parent="." unique_id=1986141387]
+position = Vector2(251.00002, 246)
+scale = Vector2(3.0185184, 2.7083333)
+texture = ExtResource("2_glbon")
+
+[node name="LilRatford" type="Sprite2D" parent="." unique_id=235940228]
+position = Vector2(677, 587)
+scale = Vector2(4.265625, 4.578125)
+texture = ExtResource("4_qe12f")
+
+[node name="start_button" type="Button" parent="." unique_id=848049087]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+icon = ExtResource("4_qe12f")
+script = ExtResource("6_qe12f")

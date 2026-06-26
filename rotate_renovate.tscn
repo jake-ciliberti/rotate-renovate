@@ -5,11 +5,13 @@
 [ext_resource type="Script" uid="uid://bmmwv0w367npj" path="res://scripts/main.gd" id="1_xgtrc"]
 [ext_resource type="Script" uid="uid://c3oct0bddmw1p" path="res://scripts/level_container.gd" id="3_27j3i"]
 [ext_resource type="TileSet" uid="uid://ciylkriooxq3g" path="res://sprites/tiles/Ocean.tres" id="5_xgtrc"]
+[ext_resource type="PackedScene" uid="uid://cv2y0prs3enhs" path="res://menu.tscn" id="6_p0puv"]
 
-[node name="Rotate-Renovate" type="Node2D" unique_id=1818220576 node_paths=PackedStringArray("player", "level_container")]
+[node name="Rotate-Renovate" type="Node2D" unique_id=1818220576 node_paths=PackedStringArray("player", "level_container", "menu")]
 script = ExtResource("1_xgtrc")
 player = NodePath("Player")
 level_container = NodePath("level_container")
+menu = NodePath("Control")
 
 [node name="background" parent="." unique_id=534743633 instance=ExtResource("1_gcghl")]
 
@@ -41,3 +43,5 @@ limit_bottom = 0
 position_smoothing_enabled = true
 editor_draw_limits = true
 editor_draw_drag_margin = true
+
+[node name="Control" parent="." unique_id=183645100 instance=ExtResource("6_p0puv")]
