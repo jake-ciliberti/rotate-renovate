@@ -48,12 +48,12 @@ polygon = PackedVector2Array(-73, -44, 133, -40, 112, 82, -67, 64)
 script = ExtResource("4_5722l")
 
 [node name="GamePanel3" type="Area2D" parent="PanelController" unique_id=720127323 node_paths=PackedStringArray("hitbox")]
-position = Vector2(395, 94)
+position = Vector2(153, 420)
 script = ExtResource("3_5722l")
+group = 1
 hitbox = NodePath("CollisionPolygon2D")
 metadata/_custom_type_script = "uid://74gqrjs1tww4"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PanelController/GamePanel3" unique_id=97492504]
-position = Vector2(-316, 430)
 polygon = PackedVector2Array(195, 87, 103, 187, -204, -121, -117, -181)
 script = ExtResource("4_5722l")

@@ -11,25 +11,36 @@ func _ready() -> void:
 		panels = get_tree().get_nodes_in_group("current_panels")
 	set_collision_mask_value(1, false)
 	set_collision_mask_value(2, true)
-	create_bounds()
+	make_static_bounds()
 
 # TODO: broken. create a new polygon class with a unique group, and use clipping to create the polygons. do queue_free() on all the old polygons first (as a signal)
-func create_bounds() -> void:
+func create_bounds() -> PackedVector2Array:
 	
 	get_tree().call_group("colliders", "queue_free")
 	
-	var combined_panels: Array[PackedVector2Array]
+	var combined_panels: PackedVector2Array
 	
 	if panels.size() == 0:
-		return
+		return []
 	
-	combined_panels = Geometry2D.merge_polygons(panels[0].get_global_position_and_rotation(), panels[0].get_global_position_and_rotation())
+	combined_panels = panels[0].get_global_position_and_rotation() # initalize combined_panels so that it can be merge later
 	
 	for i in panels:
-		combined_panels = Geometry2D.merge_polygons(combined_panels[0], i.get_global_position_and_rotation())
+		combined_panels = Geometry2D.merge_polygons(combined_panels, i.get_global_position_and_rotation())[0]
 	
-	for i in combined_panels:
-		build_walls(i)
+	print(combined_panels)
+	
+	return combined_panels
+
+func make_static_bounds() -> void:
+	var new_panel_collider = PanelCollider.new()
+	new_panel_collider.polygon = create_bounds()
+	add_child.call_deferred(new_panel_collider)
+	
+func make_moving_bounds() -> void:
+	var combined_panels = create_bounds()
+	build_walls(create_bounds())
+	make_static_bounds()
 
 func build_walls(poly) -> void:
 	var count = poly.size()
@@ -51,6 +62,6 @@ func build_walls(poly) -> void:
 			b2 + normal * wall_thickness,
 			a2 + normal * wall_thickness,
 		])
-		var new_panel_collider = PanelCollider.new()
+		var new_panel_collider = MovingPanelCollider.new()
 		new_panel_collider.polygon = quad
 		add_child.call_deferred(new_panel_collider)

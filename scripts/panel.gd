@@ -37,13 +37,11 @@ func highlight(selected_group: int) -> void:
 
 func _on_body_entered(body: Node2D):
 	if (body.name == "Player"):
-		print("entered")
 		add_to_group("current_panels")
 		Globals.redraw.emit()
 
 func _on_body_exited(body: Node2D):
 	if (body.name == "Player"):
-		print("exited")
 		remove_from_group("current_panels")
 		Globals.redraw.emit()
 
