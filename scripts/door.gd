@@ -6,6 +6,7 @@ signal level_finished
 func _ready() -> void:
 	add_to_group("doors")
 	body_entered.connect(_on_body_entered)
+	z_index = 2
 
 func _on_body_entered(body: Node2D):
 	if (body.name == "Player"):

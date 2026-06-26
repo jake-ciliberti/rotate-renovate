@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://c27jfwliv6jgu"]
+
+[ext_resource type="Script" uid="uid://1hljlhp5cw2n" path="res://scripts/level.gd" id="1_0fd8o"]
+[ext_resource type="Script" uid="uid://ccmj71uqtvvjl" path="res://scripts/panel_controller.gd" id="2_dmnu2"]
+[ext_resource type="Script" uid="uid://b6x7sm5ynop2t" path="res://scripts/collision_controller.gd" id="3_sc6c1"]
+[ext_resource type="Script" uid="uid://74gqrjs1tww4" path="res://scripts/panel.gd" id="4_ng40l"]
+[ext_resource type="Script" uid="uid://de1ufrp6f2ggg" path="res://scripts/collision_polygon_2d.gd" id="5_04hp8"]
+[ext_resource type="Script" uid="uid://cg1q082726f4t" path="res://scripts/door.gd" id="6_8hlpj"]
+[ext_resource type="Texture2D" uid="uid://bska1iimvrabn" path="res://sprites/vent.png" id="7_qhnv2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6w6ra"]
+size = Vector2(1024, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ep78u"]
+size = Vector2(32, 48)
+
+[node name="Level" type="Node2D" unique_id=1248532620 node_paths=PackedStringArray("panel_controller")]
+script = ExtResource("1_0fd8o")
+spawnpoint = Vector2(97, 496)
+panel_controller = NodePath("PanelController")
+metadata/_custom_type_script = "uid://1hljlhp5cw2n"
+
+[node name="PanelController" type="Node2D" parent="." unique_id=918188588 node_paths=PackedStringArray("collision")]
+script = ExtResource("2_dmnu2")
+number_of_groups = 2
+collision = NodePath("CollisionController")
+metadata/_custom_type_script = "uid://ccmj71uqtvvjl"
+
+[node name="CollisionController" type="StaticBody2D" parent="PanelController" unique_id=1100167200]
+script = ExtResource("3_sc6c1")
+metadata/_custom_type_script = "uid://b6x7sm5ynop2t"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PanelController/CollisionController" unique_id=1095858909]
+position = Vector2(512, 825)
+shape = SubResource("RectangleShape2D_6w6ra")
+
+[node name="GamePanel" type="Area2D" parent="PanelController" unique_id=1688199483 node_paths=PackedStringArray("hitbox")]
+position = Vector2(407, 495)
+script = ExtResource("4_ng40l")
+hitbox = NodePath("CollisionPolygon2D")
+metadata/_custom_type_script = "uid://74gqrjs1tww4"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PanelController/GamePanel" unique_id=1068057270]
+scale = Vector2(0.5, 1.5)
+polygon = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+script = ExtResource("5_04hp8")
+metadata/_custom_type_script = "uid://de1ufrp6f2ggg"
+
+[node name="GamePanel2" type="Area2D" parent="PanelController" unique_id=568019450 node_paths=PackedStringArray("hitbox")]
+position = Vector2(97, 496)
+script = ExtResource("4_ng40l")
+group = 1
+hitbox = NodePath("CollisionPolygon2D")
+metadata/_custom_type_script = "uid://74gqrjs1tww4"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PanelController/GamePanel2" unique_id=29737201]
+scale = Vector2(0.5, 1.5)
+polygon = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+script = ExtResource("5_04hp8")
+metadata/_custom_type_script = "uid://de1ufrp6f2ggg"
+
+[node name="GamePanel3" type="Area2D" parent="PanelController" unique_id=1286339150 node_paths=PackedStringArray("hitbox")]
+position = Vector2(772, 507)
+script = ExtResource("4_ng40l")
+group = 1
+hitbox = NodePath("CollisionPolygon2D")
+metadata/_custom_type_script = "uid://74gqrjs1tww4"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PanelController/GamePanel3" unique_id=448808443]
+scale = Vector2(1.5, 0.5)
+polygon = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+script = ExtResource("5_04hp8")
+metadata/_custom_type_script = "uid://de1ufrp6f2ggg"
+
+[node name="Door" type="Area2D" parent="PanelController/GamePanel3" unique_id=908226145]
+position = Vector2(0, 25)
+script = ExtResource("6_8hlpj")
+metadata/_custom_type_script = "uid://cg1q082726f4t"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PanelController/GamePanel3/Door" unique_id=1335565330]
+shape = SubResource("RectangleShape2D_ep78u")
+
+[node name="Sprite2D" type="Sprite2D" parent="PanelController/GamePanel3/Door" unique_id=439392504]
+scale = Vector2(2, 2)
+texture = ExtResource("7_qhnv2")

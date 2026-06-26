@@ -6,7 +6,6 @@
 [ext_resource type="Script" uid="uid://74gqrjs1tww4" path="res://scripts/panel.gd" id="4_btoec"]
 [ext_resource type="Script" uid="uid://de1ufrp6f2ggg" path="res://scripts/collision_polygon_2d.gd" id="5_gwceb"]
 [ext_resource type="Script" uid="uid://cg1q082726f4t" path="res://scripts/door.gd" id="6_gwceb"]
-[ext_resource type="Texture2D" uid="uid://by1434yc5ndb8" path="res://circle_PNG14-2552655912.png" id="6_l53as"]
 [ext_resource type="Texture2D" uid="uid://bska1iimvrabn" path="res://sprites/vent.png" id="7_l53as"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n46q3"]
@@ -56,9 +55,3 @@ shape = SubResource("RectangleShape2D_6w6ra")
 rotation = 3.1415927
 scale = Vector2(2, 2)
 texture = ExtResource("7_l53as")
-
-[node name="CirclePng142552655912" type="Sprite2D" parent="." unique_id=1969050604]
-visible = false
-position = Vector2(511.99997, 390)
-scale = Vector2(0.22477925, 0.22477925)
-texture = ExtResource("6_l53as")

@@ -2,11 +2,13 @@ extends Node2D
 
 signal reset_player
 
+@export var background_music: AudioStreamPlayer
+
 var level: Level
 var level_number = 0
 
 func _ready() -> void:
-	pass
+	background_music.stream_paused = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -26,6 +28,7 @@ func load_level(new_level: int) -> void:
 	
 	if !(level_resource):
 		level_number = -1
+		background_music.stream_paused = true
 		return
 	
 	level = level_resource.instantiate()
@@ -35,6 +38,9 @@ func load_level(new_level: int) -> void:
 	add_child(level)
 	
 	level_number = new_level
+	
+	if level_number > 0:
+		background_music.stream_paused = false
 
 func increment_level() -> void:
 	load_level(level_number + 1)

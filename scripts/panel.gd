@@ -32,10 +32,14 @@ func get_global_position_and_rotation() -> PackedVector2Array:
 
 func highlight(selected_group: int) -> void:
 	if selected_group != group:
-		hitbox.visible = false
+		hitbox.color = Color(0.05, 0.1, 0.1)
+		hitbox.z_index = 1
 	
 	else:
-		hitbox.visible = true
+		hitbox.color = Color(0.05, 0.15, 0.15)
+		hitbox.z_index = 2
+		
+	hitbox.queue_redraw()
 
 func _on_body_entered(body: Node2D):
 	if (body.name == "Player"):

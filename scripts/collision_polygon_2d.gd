@@ -1,9 +1,11 @@
 class_name PanelHitbox extends CollisionPolygon2D
 
+var color: Color
+
 func _ready():
-	visible = false
+	color = Color(0.05, 0.1, 0.1)
 
 func _draw() -> void:
 	# We are going to paint with this color.
 	# We pass the PackedVector2Array to draw the shape.
-	draw_polygon(polygon, [ Color(0.8, 0.8, 0, 0.5) ])
+	draw_polygon(polygon, [ color ])
