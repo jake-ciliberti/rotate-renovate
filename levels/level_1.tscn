@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://de1ufrp6f2ggg" path="res://scripts/collision_polygon_2d.gd" id="5_gwceb"]
 [ext_resource type="Script" uid="uid://cg1q082726f4t" path="res://scripts/door.gd" id="6_gwceb"]
 [ext_resource type="Texture2D" uid="uid://bska1iimvrabn" path="res://sprites/vent.png" id="7_l53as"]
+[ext_resource type="AudioStream" uid="uid://gs6ok2atiaej" path="res://keyboard mechanical typing supernatural speed 2.wav" id="9_3sk1a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n46q3"]
 size = Vector2(1024, 30)
@@ -39,10 +40,11 @@ metadata/_custom_type_script = "uid://b6x7sm5ynop2t"
 position = Vector2(512, 825)
 shape = SubResource("RectangleShape2D_n46q3")
 
-[node name="GamePanel" type="Area2D" parent="PanelController" unique_id=1142248548 node_paths=PackedStringArray("hitbox")]
+[node name="GamePanel" type="Area2D" parent="PanelController" unique_id=1142248548 node_paths=PackedStringArray("hitbox", "audio")]
 position = Vector2(512, 350)
 script = ExtResource("4_btoec")
 hitbox = NodePath("PanelHitbox")
+audio = NodePath("AudioStreamPlayer2D")
 metadata/_custom_type_script = "uid://74gqrjs1tww4"
 
 [node name="PanelHitbox" type="CollisionPolygon2D" parent="PanelController/GamePanel" unique_id=1107263741]
@@ -62,3 +64,6 @@ shape = SubResource("RectangleShape2D_6w6ra")
 rotation = 3.1415927
 scale = Vector2(2, 2)
 texture = ExtResource("7_l53as")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="PanelController/GamePanel" unique_id=849652694]
+stream = ExtResource("9_3sk1a")

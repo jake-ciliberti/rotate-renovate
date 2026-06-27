@@ -3,6 +3,7 @@ class_name GamePanel extends Area2D
 @export var reversed: bool = false
 @export var group: int
 @export var hitbox: PanelHitbox
+@export var audio: AudioStreamPlayer2D
 
 var initial_rotation_degrees = rotation_degrees
 
@@ -15,9 +16,16 @@ func _ready() -> void:
 	body_exited.connect(_on_body_exited)
 	add_to_group("panels")
 
+func _process(_delta: float) -> void:
+	if Input.is_action_just_released("rotate_counterclockwise") or Input.is_action_just_released("rotate_clockwise"):
+		audio.stop()
+
 func change_rotation(selected_group: int, rotation_change: float) -> void:
 	if selected_group != group:
 		return
+	
+	if Input.is_action_just_pressed("rotate_counterclockwise") or Input.is_action_just_pressed("rotate_clockwise"):
+		audio.play()
 	
 	if reversed:
 		rotation_change *= -1

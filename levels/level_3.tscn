@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://b6x7sm5ynop2t" path="res://scripts/collision_controller.gd" id="3_ofchu"]
 [ext_resource type="Script" uid="uid://74gqrjs1tww4" path="res://scripts/panel.gd" id="4_jq78i"]
 [ext_resource type="Script" uid="uid://de1ufrp6f2ggg" path="res://scripts/collision_polygon_2d.gd" id="5_lsnkt"]
+[ext_resource type="AudioStream" uid="uid://gs6ok2atiaej" path="res://keyboard mechanical typing supernatural speed 2.wav" id="6_ofchu"]
 [ext_resource type="Script" uid="uid://cg1q082726f4t" path="res://scripts/door.gd" id="6_wj73x"]
 [ext_resource type="Texture2D" uid="uid://bska1iimvrabn" path="res://sprites/vent.png" id="7_lfnxh"]
 
@@ -35,10 +36,11 @@ metadata/_custom_type_script = "uid://b6x7sm5ynop2t"
 position = Vector2(512, 825)
 shape = SubResource("RectangleShape2D_6w6ra")
 
-[node name="GamePanel" type="Area2D" parent="PanelController" unique_id=1688199483 node_paths=PackedStringArray("hitbox")]
+[node name="GamePanel" type="Area2D" parent="PanelController" unique_id=1688199483 node_paths=PackedStringArray("hitbox", "audio")]
 position = Vector2(-592, 495)
 script = ExtResource("4_jq78i")
 hitbox = NodePath("CollisionPolygon2D")
+audio = NodePath("AudioStreamPlayer2D")
 metadata/_custom_type_script = "uid://74gqrjs1tww4"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PanelController/GamePanel" unique_id=1068057270]
@@ -47,11 +49,15 @@ polygon = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
 script = ExtResource("5_lsnkt")
 metadata/_custom_type_script = "uid://de1ufrp6f2ggg"
 
-[node name="GamePanel2" type="Area2D" parent="PanelController" unique_id=568019450 node_paths=PackedStringArray("hitbox")]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="PanelController/GamePanel" unique_id=1106470931]
+stream = ExtResource("6_ofchu")
+
+[node name="GamePanel2" type="Area2D" parent="PanelController" unique_id=568019450 node_paths=PackedStringArray("hitbox", "audio")]
 position = Vector2(-902, 496)
 script = ExtResource("4_jq78i")
 group = 1
 hitbox = NodePath("CollisionPolygon2D")
+audio = NodePath("AudioStreamPlayer2D")
 metadata/_custom_type_script = "uid://74gqrjs1tww4"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PanelController/GamePanel2" unique_id=29737201]
@@ -60,11 +66,15 @@ polygon = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
 script = ExtResource("5_lsnkt")
 metadata/_custom_type_script = "uid://de1ufrp6f2ggg"
 
-[node name="GamePanel3" type="Area2D" parent="PanelController" unique_id=1286339150 node_paths=PackedStringArray("hitbox")]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="PanelController/GamePanel2" unique_id=1257236045]
+stream = ExtResource("6_ofchu")
+
+[node name="GamePanel3" type="Area2D" parent="PanelController" unique_id=1286339150 node_paths=PackedStringArray("hitbox", "audio")]
 position = Vector2(-227, 507)
 script = ExtResource("4_jq78i")
 group = 1
 hitbox = NodePath("CollisionPolygon2D")
+audio = NodePath("AudioStreamPlayer2D")
 metadata/_custom_type_script = "uid://74gqrjs1tww4"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PanelController/GamePanel3" unique_id=448808443]
@@ -84,3 +94,6 @@ shape = SubResource("RectangleShape2D_ep78u")
 [node name="Sprite2D" type="Sprite2D" parent="PanelController/GamePanel3/Door" unique_id=439392504]
 scale = Vector2(2, 2)
 texture = ExtResource("7_lfnxh")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="PanelController/GamePanel3" unique_id=575925139]
+stream = ExtResource("6_ofchu")
