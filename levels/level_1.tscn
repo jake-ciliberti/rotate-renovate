@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://1hljlhp5cw2n" path="res://scripts/level.gd" id="1_r3hui"]
 [ext_resource type="Script" uid="uid://ccmj71uqtvvjl" path="res://scripts/panel_controller.gd" id="2_bt44k"]
+[ext_resource type="Texture2D" uid="uid://clvoer6qfg6pa" path="res://sprites/washing-machine.png" id="2_l53as"]
 [ext_resource type="Script" uid="uid://b6x7sm5ynop2t" path="res://scripts/collision_controller.gd" id="3_kx6l7"]
 [ext_resource type="Script" uid="uid://74gqrjs1tww4" path="res://scripts/panel.gd" id="4_btoec"]
 [ext_resource type="Script" uid="uid://de1ufrp6f2ggg" path="res://scripts/collision_polygon_2d.gd" id="5_gwceb"]
@@ -19,6 +20,11 @@ script = ExtResource("1_r3hui")
 door = NodePath("PanelController/GamePanel/Door")
 panel_controller = NodePath("PanelController")
 metadata/_custom_type_script = "uid://1hljlhp5cw2n"
+
+[node name="WashingMachine" type="Sprite2D" parent="." unique_id=192947903]
+position = Vector2(512, 405)
+scale = Vector2(2, 2)
+texture = ExtResource("2_l53as")
 
 [node name="PanelController" type="Node2D" parent="." unique_id=1819598644 node_paths=PackedStringArray("collision")]
 script = ExtResource("2_bt44k")
