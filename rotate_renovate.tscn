@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://c3jujvrsjgjo1" path="res://Groovy Saturday.ogg" id="4_lwflv"]
 [ext_resource type="AudioStream" uid="uid://b55ecm8lwupjp" path="res://Dangerous Path.ogg" id="5_c21k2"]
 [ext_resource type="TileSet" uid="uid://ciylkriooxq3g" path="res://sprites/tiles/Ocean.tres" id="5_xgtrc"]
+[ext_resource type="Script" uid="uid://ck3ro3p0hgdxi" path="res://scripts/level_menu.gd" id="6_c21k2"]
 [ext_resource type="PackedScene" uid="uid://cv2y0prs3enhs" path="res://menu.tscn" id="6_p0puv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6w6ra"]
@@ -21,10 +22,11 @@ menu = NodePath("CanvasLayer/Control")
 [node name="background" parent="." unique_id=534743633 instance=ExtResource("1_gcghl")]
 z_index = -1
 
-[node name="level_container" type="Node2D" parent="." unique_id=516695850 node_paths=PackedStringArray("background_music", "menu_music")]
+[node name="level_container" type="Node2D" parent="." unique_id=516695850 node_paths=PackedStringArray("background_music", "menu_music", "menu")]
 script = ExtResource("3_27j3i")
 background_music = NodePath("happy_music")
 menu_music = NodePath("ominous_music")
+menu = NodePath("CanvasLayer/Control")
 
 [node name="happy_music" type="AudioStreamPlayer" parent="level_container" unique_id=967421650]
 stream = ExtResource("4_lwflv")
@@ -38,11 +40,32 @@ autoplay = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="level_container" unique_id=2000857600]
 
-[node name="Control" type="Control" parent="level_container/CanvasLayer" unique_id=1748702673]
+[node name="Control" type="Control" parent="level_container/CanvasLayer" unique_id=1748702673 node_paths=PackedStringArray("button")]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("6_c21k2")
+button = NodePath("Button")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="level_container/CanvasLayer/Control" unique_id=941716038]
+layout_mode = 0
+offset_left = 413.0
+offset_top = 252.0
+offset_right = 747.0
+offset_bottom = 422.0
+theme_override_font_sizes/normal_font_size = 50
+text = "You win!"
+fit_content = true
+autowrap_mode = 1
+
+[node name="Button" type="Button" parent="level_container/CanvasLayer/Control" unique_id=354628872]
+layout_mode = 0
+offset_left = 452.0
+offset_top = 329.0
+offset_right = 579.0
+offset_bottom = 360.0
+text = "Play next level?"
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=1623662369]
 scroll_scale = Vector2(1.2, 1)

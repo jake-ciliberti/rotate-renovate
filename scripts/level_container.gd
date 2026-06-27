@@ -4,11 +4,14 @@ signal reset_player
 
 @export var background_music: AudioStreamPlayer
 @export var menu_music: AudioStreamPlayer
+@export var menu: Control
 
 var level: Level
 var level_number = 0
 
 func _ready() -> void:
+	menu.next_level.connect.call_deferred(increment_level)
+	menu.hide()
 	background_music.stream_paused = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -54,4 +57,4 @@ func _on_level_reset(spawnpoint: Vector2) -> void:
 	reset_player.emit(spawnpoint)
 
 func _on_level_finished() -> void:
-	increment_level()
+	menu.show()

@@ -7,6 +7,6 @@ func _ready() -> void:
 	body_entered.connect(_on_body_entered)
 	z_index = 2
 
-func _on_body_entered(body: Node2D):
+func _on_body_entered(body: Node2D) -> void:
 	if (body.name == "Player"):
 		level_finished.emit()

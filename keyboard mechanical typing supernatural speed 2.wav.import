@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://gs6ok2atiaej"
+path="res://.godot/imported/keyboard mechanical typing supernatural speed 2.wav-0e84a2218585f9e8a42202447abdc12f.sample"
+
+[deps]
+
+source_file="res://keyboard mechanical typing supernatural speed 2.wav"
+dest_files=["res://.godot/imported/keyboard mechanical typing supernatural speed 2.wav-0e84a2218585f9e8a42202447abdc12f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

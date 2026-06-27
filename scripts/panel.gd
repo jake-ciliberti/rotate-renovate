@@ -1,5 +1,6 @@
 class_name GamePanel extends Area2D
 
+@export var reversed: bool = false
 @export var group: int
 @export var hitbox: PanelHitbox
 
@@ -14,13 +15,12 @@ func _ready() -> void:
 	body_exited.connect(_on_body_exited)
 	add_to_group("panels")
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	pass
-
 func change_rotation(selected_group: int, rotation_change: float) -> void:
 	if selected_group != group:
 		return
+	
+	if reversed:
+		rotation_change *= -1
 	
 	rotation += rotation_change
 

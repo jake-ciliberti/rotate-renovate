@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @export var sprite: AnimatedSprite2D
+@export var audio: AudioStreamPlayer
 
 var god_mode: bool = false
 var is_swimming: bool = false
@@ -10,7 +11,7 @@ const JUMP_VELOCITY = -400.0
 var selected_rotation_group = 0
 var double_jump_available = true
 
-func _ready():
+func _ready() -> void:
 	sprite.play("default")
 
 func teleport(new_position: Vector2) -> void:
@@ -36,8 +37,10 @@ func _physics_process(delta: float) -> void:
 	
 	elif !Input.is_action_pressed("move_left") and !Input.is_action_pressed("move_right"):
 		sprite.play("default")
+		audio.stream_paused = true
 	if Input.is_action_just_pressed("move_left") or Input.is_action_just_pressed("move_right"):
 		sprite.play("running")
+		audio.stream_paused = false
 	
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
