@@ -16,7 +16,7 @@ size = Vector2(32, 48)
 
 [node name="Level" type="Node2D" unique_id=1248532620 node_paths=PackedStringArray("door", "panel_controller")]
 script = ExtResource("1_8l0e1")
-spawnpoint = Vector2(-592, 496)
+spawnpoint = Vector2(-902, 496)
 door = NodePath("PanelController/GamePanel3/Door")
 panel_controller = NodePath("PanelController")
 metadata/_custom_type_script = "uid://1hljlhp5cw2n"
