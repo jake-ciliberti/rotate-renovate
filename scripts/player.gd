@@ -28,7 +28,7 @@ func _physics_process(delta: float) -> void:
 	
 	# Handle jump.
 	if Input.is_action_just_pressed("jump"):
-		if is_on_floor():
+		if is_on_floor() or is_swimming:
 			velocity.y = JUMP_VELOCITY
 			double_jump_available = true
 		elif double_jump_available:
@@ -64,8 +64,6 @@ func _physics_process(delta: float) -> void:
 	if is_swimming:
 		velocity.x *= 0.5
 		velocity.y *= 0.5
-		
-		double_jump_available = true
 	
 	if god_mode:
 		set_collision_mask_value(1, false)

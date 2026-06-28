@@ -4,6 +4,7 @@ class_name GamePanel extends Area2D
 @export var group: int
 @export var hitbox: PanelHitbox
 @export var audio: AudioStreamPlayer2D
+@export var leaks: Array[Area2D]
 
 var initial_rotation_degrees = rotation_degrees
 

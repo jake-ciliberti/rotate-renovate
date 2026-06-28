@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dapdhast0mtac"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6w6ra"]
+size = Vector2(32, 32)
+
+[node name="Break" type="Node2D" unique_id=302889574]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=721124463]
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=1204967008]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1670890519]
+shape = SubResource("RectangleShape2D_6w6ra")

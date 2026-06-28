@@ -8,5 +8,5 @@ func _ready() -> void:
 	z_index = 2
 
 func _on_body_entered(body: Node2D) -> void:
-	if (body.name == "Player"):
+	if (body.name == "Player") and get_tree().get_node_count_in_group("water") == 0:
 		level_finished.emit()

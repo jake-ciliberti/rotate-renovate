@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://dpwu7hgjycrv3"]
+
+[ext_resource type="Texture2D" uid="uid://ct5du582t63hw" path="res://sprites/water0.png" id="1_qmoj4"]
+[ext_resource type="Script" uid="uid://y2sp6wkfa85f" path="res://scripts/water.gd" id="1_x4ob8"]
+[ext_resource type="Texture2D" uid="uid://cx4s355f1jl0r" path="res://sprites/water1.png" id="2_x4ob8"]
+[ext_resource type="Texture2D" uid="uid://b15twyq7yejc4" path="res://sprites/water2.png" id="3_746c1"]
+[ext_resource type="Texture2D" uid="uid://rxfs7ckmyurc" path="res://sprites/water3.png" id="4_3g7ry"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6w6ra"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_qmoj4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_x4ob8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_746c1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_3g7ry")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x4ob8"]
+size = Vector2(32, 32)
+
+[node name="Water" type="Area2D" unique_id=2022403872 node_paths=PackedStringArray("sprite")]
+z_index = 4
+script = ExtResource("1_x4ob8")
+sprite = NodePath("AnimatedSprite2D")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2026091971]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_6w6ra")
+frame = 2
+frame_progress = 0.54780996
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1315963156]
+shape = SubResource("RectangleShape2D_x4ob8")
