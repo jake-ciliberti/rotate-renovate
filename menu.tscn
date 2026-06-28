@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cv2y0prs3enhs"]
 
 [ext_resource type="Script" uid="uid://cj38vnswc5sm1" path="res://scripts/menu.gd" id="1_nlkkf"]
-[ext_resource type="Texture2D" uid="uid://dswa05h7u8xo7" path="res://sprites/ratford/lil_ratford.png" id="4_qe12f"]
+[ext_resource type="Texture2D" uid="uid://b7v7tjtjgsc76" path="res://sprites/washing_machine.png" id="2_4hy44"]
 [ext_resource type="Script" uid="uid://i7k4ncnolrgq" path="res://scripts/level_select.gd" id="5_ytr4m"]
 [ext_resource type="Script" uid="uid://bo180hgf7p1k6" path="res://scripts/start_button.gd" id="6_qe12f"]
 
@@ -31,12 +31,13 @@ color = Color(0, 0, 0, 0.5882353)
 
 [node name="start_button" type="Button" parent="." unique_id=848049087]
 layout_mode = 0
-offset_left = 430.0
+offset_left = 411.0
 offset_top = 254.0
-offset_right = 594.0
+offset_right = 605.0
 offset_bottom = 326.0
 text = "Start Game"
-icon = ExtResource("4_qe12f")
+icon = ExtResource("2_4hy44")
+expand_icon = true
 script = ExtResource("6_qe12f")
 
 [node name="select_level" type="Button" parent="." unique_id=1569364535 node_paths=PackedStringArray("number_input")]

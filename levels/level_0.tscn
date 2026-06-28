@@ -4,7 +4,7 @@
 [ext_resource type="TileSet" uid="uid://cn5qrq50vbfwx" path="res://sprites/tiles/Docks.tres" id="2_823pn"]
 [ext_resource type="Script" uid="uid://cg1q082726f4t" path="res://scripts/door.gd" id="3_2ro2b"]
 [ext_resource type="TileSet" uid="uid://ciylkriooxq3g" path="res://sprites/tiles/Ocean.tres" id="3_yi3jx"]
-[ext_resource type="Texture2D" uid="uid://b7v7tjtjgsc76" path="res://sprites/washing_machine.png" id="4_2ro2b"]
+[ext_resource type="Texture2D" uid="uid://cpmf5t77vmk6o" path="res://sprites/laundry_machine.png" id="4_2ro2b"]
 [ext_resource type="Script" uid="uid://cb3cpa537xkor" path="res://scripts/ratford.gd" id="4_foxie"]
 [ext_resource type="Texture2D" uid="uid://dswa05h7u8xo7" path="res://sprites/ratford/lil_ratford.png" id="4_yi3jx"]
 [ext_resource type="Script" uid="uid://bc6sfw7urwwul" path="res://scripts/ratford2.gd" id="6_7d3si"]
@@ -23,7 +23,7 @@ size = Vector2(31.110842, 99.566284)
 size = Vector2(20, 850)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p0s0h"]
-size = Vector2(96.16516, 90.82489)
+size = Vector2(408.59457, 469.2418)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4v1xc"]
 size = Vector2(180, 219)
@@ -80,11 +80,11 @@ script = ExtResource("3_2ro2b")
 metadata/_custom_type_script = "uid://cg1q082726f4t"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door" unique_id=25755886]
-position = Vector2(2.029419, -16.49646)
+position = Vector2(26.09961, -205.70517)
 shape = SubResource("RectangleShape2D_p0s0h")
 
 [node name="Sprite2D" type="Sprite2D" parent="Door" unique_id=2006835679]
-position = Vector2(2.0600858, -32.996235)
+position = Vector2(29.428606, -234.94662)
 scale = Vector2(4, 4)
 texture = ExtResource("4_2ro2b")
 

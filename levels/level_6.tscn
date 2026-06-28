@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://1hljlhp5cw2n" path="res://scripts/level.gd" id="1_6up2b"]
 [ext_resource type="FontFile" uid="uid://c8dq512vwtdo3" path="res://papyrus.ttf" id="2_vflpa"]
+[ext_resource type="Texture2D" uid="uid://csrqwxw3hwxe1" path="res://sprites/clean_laundry.png" id="3_pltw0"]
 
 [node name="Level" type="Node2D" unique_id=1325096220]
 script = ExtResource("1_6up2b")
@@ -26,3 +27,7 @@ text = "Congratualtions! You cleaned the washing machine!
 
 Game by Beej Bowling and Jake Ciliberti"
 horizontal_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=508519419]
+position = Vector2(514, 673)
+texture = ExtResource("3_pltw0")
