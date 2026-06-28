@@ -1,6 +1,7 @@
 class_name Level extends Node2D
 
 # level setup
+@export var use_spawn: bool = true
 @export var spawnpoint: Vector2 = Vector2(512, 408)
 @export var group_number: int
 @export var door: Door

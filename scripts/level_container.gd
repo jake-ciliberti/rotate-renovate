@@ -37,7 +37,8 @@ func load_level(new_level: int) -> void:
 	
 	level = level_resource.instantiate()
 	
-	level.reset.connect(_on_level_reset)
+	if level.use_spawn:
+		level.reset.connect(_on_level_reset)
 	
 	if level.door:
 		level.door.level_finished.connect(_on_level_finished)
